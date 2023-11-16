@@ -7,6 +7,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+# Распределение/упаковка
 .Python
 build/
 develop-eggs/
@@ -132,7 +133,7 @@ venv.bak/
 .spyderproject
 .spyproject
 
-# Настройки проекта веревки
+# Настройки проекта Rope
 .ropeproject
 
 # документация mkdocs
@@ -144,6 +145,7 @@ venv.bak/
 dmypy.json
 
 # Pyre type checker
+# Проверка типа Pyre
 .pyre/
 
 # анализатор статических типов pytype
