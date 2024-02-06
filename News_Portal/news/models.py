@@ -7,14 +7,15 @@ from django.dispatch import receiver
 from django.urls import reverse
 
 from subscriptions.models import Subscriber
+from django.core.cache import cache
 
 
 # Создавайте свои модели здесь.
 class Author(models.Model):
     """
     Метод update_rating() вычисляет суммарный рейтинг каждой статьи автора,
-    умножает его на 3, а затем складывает с суммарным рейтингом всех комментариев автора
-    и комментариев к статьям автора.
+    умножает его на 3, а затем складывает с суммарным рейтингом всех
+    комментариев автора и комментариев к статьям автора.
     Результат сохраняется в поле rating объекта Author
     """
 
@@ -23,7 +24,8 @@ class Author(models.Model):
 
     def update_rating(self):
         # Вычисление суммарного рейтинга статей автора
-        post_sum = self.post_set.aggregate(postRating=Sum('rating'))  # Сбор всех данных определённого поля автора
+        post_sum = self.post_set.aggregate(postRating=Sum('rating'))  # Сбор
+        # всех данных определённого поля автора
         temp_sum_p = 0
         temp_sum_p += post_sum.get('postRating')
         # Вычисление суммарного рейтинга комментариев автора
@@ -49,8 +51,8 @@ class Category(models.Model):
 
 class Post(models.Model):
     """
-    Метод preview() возвращает начало статьи длиной 124 символа с многоточием в конце
-    Методы like() и dislike() увеличивают/уменьшают рейтинг на единицу.
+    Метод preview() возвращает начало статьи длиной 124 символа с многоточием в
+    конце Методы like() и dislike() увеличивают/уменьшают рейтинг на единицу.
     """
     ARTICLE = 'AR'
     NEWS = 'NW'
@@ -59,8 +61,11 @@ class Post(models.Model):
         ('NW', 'Новость'),
     )
     author = models.ForeignKey(Author, on_delete=models.CASCADE)  # Поле Автор
-    type = models.CharField(max_length=2, choices=CATEGOY_CHOICES, default=ARTICLE)  # Поле выбора новость / статья
-    creationDate = models.DateTimeField(auto_now_add=True)  # Авто добавление даты создания
+    type = models.CharField(max_length=2,
+                            choices=CATEGOY_CHOICES,
+                            default=ARTICLE)  # Поле выбора новость / статья
+    creationDate = models.DateTimeField(auto_now_add=True)
+    # creationDate Авто добавление даты создания
     postCategory = models.ManyToManyField(Category, through='PostCategory')
     title = models.CharField(max_length=128)
     content = models.TextField()
@@ -80,11 +85,29 @@ class Post(models.Model):
     # для удобного отображения на странице администратора
     def __str__(self):
         return self.title
-    
+
     def save(self, *args, **kwargs):
-       super().save(*args, **kwargs)
-       from .tasks import send_news_notification
-       send_news_notification.delay(self.id)
+        cache.delete(f'post_{self.id}')
+        super().save(*args, **kwargs)
+        from .tasks import send_news_notification
+        send_news_notification.delay(self.id)
+
+    def delete(self, *args, **kwargs):
+        cache.delete(f'post_{self.id}')
+        super().delete(*args, **kwargs)
+
+    @staticmethod
+    def get_cached_post(post_id):
+        # Метод для получения кэшированной статьи по id.
+        # Проверяет, есть ли статья в кэше, если нет,
+        # то извлекает из базы данных и сохранять в кэш.
+        cache_key = f'post_{post_id}'
+        post = cache.get(cache_key)
+        if post is None:
+            post = Post.objects.filter(id=post_id).first()
+            if post is not None:
+                cache.set(cache_key, post)
+        return post
 
     # какую страницу нужно открыть после создания
     @staticmethod
@@ -101,7 +124,8 @@ class Comment(models.Model):
     """
     Методы like() и dislike() увеличивают/уменьшают рейтинг на единицу.
     """
-    commentPost = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    commentPost = models.ForeignKey(Post, on_delete=models.CASCADE,
+                                    related_name='comments')
     commentUser = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField()
     dateCreation = models.DateTimeField(auto_now_add=True)
@@ -118,7 +142,6 @@ class Comment(models.Model):
     # для удобного отображения на странице администратора
     def __str__(self):
         return self.text
-
 
 # # отправка писем при публикации новой статьи
 # @receiver(m2m_changed, sender=Post.postCategory.through)

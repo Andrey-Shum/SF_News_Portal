@@ -5,8 +5,9 @@ from django import forms
 
 class PostFilter(django_filters.FilterSet):
     """
-    Создаем свой набор фильтров для модели Post.
-    FilterSet, который мы наследуем, должен чем-то напомнить знакомые вам Django дженерики.
+    Создаём свой набор фильтров для модели Post.
+    FilterSet, который мы наследуем, должен чем-то напомнить знакомые вам Django
+    дженерики.
     """
     # поиск по названию
     title = django_filters.CharFilter(field_name='title', lookup_expr='icontains', label='Заголовок',
@@ -26,8 +27,10 @@ class PostFilter(django_filters.FilterSet):
 
     class Meta:
         """
-        В Meta классе мы должны указать Django модель, в которой будем фильтровать записи.
+        В Meta классе мы должны указать Django модель, в которой будем
+        фильтровать записи.
         """
         model = Post
-        # В fields мы описываем по каким полям модели будет производиться фильтрация.
+        # В fields мы описываем по каким полям модели будет производиться
+        # фильтрация.
         fields = ['type', 'author', 'title', 'postCategory', 'creationDate']

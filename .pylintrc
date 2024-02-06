@@ -1,135 +1,135 @@
 [MAIN]
 
-# Analyse import fallback blocks. This can be used to support both Python 2 and
-# 3 compatible code, which means that the block might have code that exists
-# only in one or another interpreter, leading to false positives when analysed.
+# Анализируйте резервные блоки импорта. Это можно использовать для поддержки как Python 2, так и
+# 3 совместимый код, что означает, что блок может иметь существующий код.
+# только в том или ином интерпретаторе, что приводит к ложным срабатываниям при анализе.
 analyse-fallback-blocks=no
 
-# Clear in-memory caches upon conclusion of linting. Useful if running pylint
-# in a server-like mode.
+# Очистите кэши в памяти после завершения проверки. Полезно при запуске pylint
+# в серверном режиме.
 clear-cache-post-run=no
 
-# Load and enable all available extensions. Use --list-extensions to see a list
-# all available extensions.
+# Загрузите и включите все доступные расширения. Используйте --list-extensions, чтобы просмотреть список
+# все доступные расширения.
 #enable-all-extensions=
 
-# In error mode, messages with a category besides ERROR or FATAL are
-# suppressed, and no reports are done by default. Error mode is compatible with
-# disabling specific errors.
+# В режиме ошибки сообщения с категорией, кроме ERROR или FATAL,
+# подавлено, и по умолчанию отчеты не создаются. Режим ошибки совместим с
+# отключение определенных ошибок.
 #errors-only=
 
-# Always return a 0 (non-error) status code, even if lint errors are found.
-# This is primarily useful in continuous integration scripts.
+# Всегда возвращайте код состояния 0 (отсутствие ошибок), даже если обнаружены ошибки lint.
+# Это в первую очередь полезно в сценариях непрерывной интеграции.
 #exit-zero=
 
-# A comma-separated list of package or module names from where C extensions may
-# be loaded. Extensions are loading into the active Python interpreter and may
-# run arbitrary code.
+# Список имен пакетов или модулей, разделенных запятыми, из которых могут использоваться расширения C.
+# быть загружен. Расширения загружаются в активный интерпретатор Python и могут
+# запускаем произвольный код.
 extension-pkg-allow-list=
 
-# A comma-separated list of package or module names from where C extensions may
-# be loaded. Extensions are loading into the active Python interpreter and may
-# run arbitrary code. (This is an alternative name to extension-pkg-allow-list
-# for backward compatibility.)
+# Список имен пакетов или модулей, разделенных запятыми, из которых могут использоваться расширения C.
+# быть загружен. Расширения загружаются в активный интерпретатор Python и могут
+# запускаем произвольный код. (Это альтернативное имя extension-pkg-allow-list.
+# для обратной совместимости.)
 extension-pkg-whitelist=
 
-# Return non-zero exit code if any of these messages/categories are detected,
-# even if score is above --fail-under value. Syntax same as enable. Messages
-# specified are enabled, while categories only check already-enabled messages.
+# Вернуть ненулевой код выхода, если обнаружено какое-либо из этих сообщений/категорий,
+# даже если оценка выше значения --fail-under. Синтаксис такой же, как у Enable. Сообщения
+# указанные включены, а категории проверяют только уже включенные сообщения.
 fail-on=
 
-# Specify a score threshold under which the program will exit with error.
+# Укажите порог оценки, при котором программа закроется с ошибкой.
 fail-under=10
 
-# Interpret the stdin as a python script, whose filename needs to be passed as
-# the module_or_package argument.
+# Интерпретируйте стандартный ввод как скрипт Python, имя файла которого необходимо передать как
+# аргумент модуль_или_пакет.
 #from-stdin=
 
-# Files or directories to be skipped. They should be base names, not paths.
-ignore=CVS
+# Файлы или каталоги, которые нужно пропустить. Это должны быть базовые имена, а не пути.
+ignore=CVS, ven
 
-# Add files or directories matching the regular expressions patterns to the
-# ignore-list. The regex matches against paths and can be in Posix or Windows
-# format. Because '\\' represents the directory delimiter on Windows systems,
-# it can't be used as an escape character.
-ignore-paths=
+# Добавляйте файлы или каталоги, соответствующие шаблонам регулярных выражений, в
+# ignore-list. Регулярное выражение соответствует путям и может быть в Posix или Windows.
+# формат. Поскольку '\\' представляет собой разделитель каталогов в системах Windows,
+# его нельзя использовать в качестве escape-символа.
+ignore-paths=venv
 
-# Files or directories matching the regular expression patterns are skipped.
-# The regex matches against base names, not paths. The default value ignores
-# Emacs file locks
+# Файлы или каталоги, соответствующие шаблонам регулярных выражений, пропускаются.
+# Регулярное выражение соответствует базовым именам, а не путям. Значение по умолчанию игнорирует
+# Блокировки файлов Emacs
 ignore-patterns=^\.#
 
-# List of module names for which member attributes should not be checked
-# (useful for modules/projects where namespaces are manipulated during runtime
-# and thus existing member attributes cannot be deduced by static analysis). It
-# supports qualified module names, as well as Unix pattern matching.
+# Список имен модулей, атрибуты членов которых не следует проверять
+# (полезно для modules/projects, в которых пространства имен манипулируются во время выполнения
+# и, следовательно, существующие атрибуты членов не могут быть выведены с помощью статического анализа). Это
+# поддерживает квалифицированные имена модулей, а также сопоставление шаблонов Unix.
 ignored-modules=
 
-# Python code to execute, usually for sys.path manipulation such as
+# Код Python для выполнения, обычно для манипуляций с sys.path, таких как
 # pygtk.require().
 #init-hook=
 
-# Use multiple processes to speed up Pylint. Specifying 0 will auto-detect the
-# number of processors available to use, and will cap the count on Windows to
-# avoid hangs.
+# Используйте несколько процессов для ускорения Pylint. Если указать 0, будет автоматически обнаружено
+# количество процессоров, доступных для использования. В Windows их количество будет ограничено до
+# избежать зависаний.
 jobs=1
 
-# Control the amount of potential inferred values when inferring a single
-# object. This can help the performance when dealing with large functions or
-# complex, nested conditions.
+# Контролируйте количество потенциальных выведенных значений при выводе одного
+# объект. Это может повысить производительность при работе с большими функциями или
+# сложные вложенные условия.
 limit-inference-results=100
 
-# List of plugins (as comma separated values of python module names) to load,
-# usually to register additional checkers.
+# Список плагинов (в виде разделенных запятыми значений имен модулей Python) для загрузки,
+# обычно для регистрации дополнительных шашек.
 load-plugins=
 
-# Pickle collected data for later comparisons.
+# Пикл собрал данные для последующих сравнений.
 persistent=yes
 
-# Minimum Python version to use for version dependent checks. Will default to
-# the version used to run pylint.
+# Минимальная версия Python, используемая для проверок, зависящих от версии. По умолчанию будет
+# версия, используемая для запуска pylint.
 py-version=3.10
 
-# Discover python modules and packages in the file system subtree.
+# Найдите модули и пакеты Python в поддереве файловой системы.
 recursive=no
 
-# Add paths to the list of the source roots. Supports globbing patterns. The
-# source root is an absolute path or a path relative to the current working
-# directory used to determine a package namespace for modules located under the
-# source root.
+# Добавьте пути в список корней источника. Поддерживает шаблоны подстановки.
+# корень источника — это абсолютный путь или путь относительно текущего рабочего
+# каталог, используемый для определения пространства имен пакета для модулей, расположенных под
+# корень источника.
 source-roots=
 
-# When enabled, pylint would attempt to guess common misconfiguration and emit
-# user-friendly hints instead of false-positive error messages.
+# Если этот параметр включен, pylint будет пытаться угадать типичную неправильную конфигурацию и выдать
+# user-friendly подсказки вместо false-positive сообщения об ошибках.
 suggestion-mode=yes
 
-# Allow loading of arbitrary C extensions. Extensions are imported into the
-# active Python interpreter and may run arbitrary code.
+# Разрешить загрузку произвольных расширений C. Расширения импортируются в
+# активный интерпретатор Python и может запускать произвольный код.
 unsafe-load-any-extension=no
 
-# In verbose mode, extra non-checker-related info will be displayed.
+# В подробном режиме будет отображаться дополнительная информация, не связанная с проверкой.
 #verbose=
 
 
 [BASIC]
 
-# Naming style matching correct argument names.
+# Стиль именования, соответствующий правильным именам аргументов.
 argument-naming-style=snake_case
 
-# Regular expression matching correct argument names. Overrides argument-
-# naming-style. If left empty, argument names will be checked with the set
-# naming style.
+# Регулярное выражение, соответствующее правильным именам аргументов. Переопределения argument-
+# naming-style. Если оставить пустым, имена аргументов будут сверяться с набором
+# стиль именования.
 #argument-rgx=
 
-# Naming style matching correct attribute names.
+# Стиль именования соответствует правильным именам атрибутов.
 attr-naming-style=snake_case
 
-# Regular expression matching correct attribute names. Overrides attr-naming-
-# style. If left empty, attribute names will be checked with the set naming
-# style.
+# Регулярное выражение, соответствующее правильным именам атрибутов. Переопределения attr-naming-
+# style. Если оставить пустым, имена атрибутов будут сверяться с заданным именованием
+# стиль.
 #attr-rgx=
 
-# Bad variable names which should always be refused, separated by a comma.
+#Неправильные имена переменных, которые всегда следует отклонять, разделенные запятой.
 bad-names=foo,
           bar,
           baz,
@@ -137,51 +137,51 @@ bad-names=foo,
           tutu,
           tata
 
-# Bad variable names regexes, separated by a comma. If names match any regex,
-# they will always be refused
+# Неправильные имена переменных, регулярные выражения, разделенные запятой. Если имена соответствуют любому регулярному выражению,
+# им всегда будет отказано
 bad-names-rgxs=
 
-# Naming style matching correct class attribute names.
+# Стиль именования соответствует правильным именам атрибутов класса.
 class-attribute-naming-style=any
 
-# Regular expression matching correct class attribute names. Overrides class-
-# attribute-naming-style. If left empty, class attribute names will be checked
-# with the set naming style.
+# Регулярное выражение, соответствующее правильным именам атрибутов класса. Переопределения class-
+# attribute-naming-style. Если оставить пустым, будут проверены имена атрибутов класса
+# с заданным стилем именования.
 #class-attribute-rgx=
 
-# Naming style matching correct class constant names.
+# Стиль именования соответствует правильным именам констант класса.
 class-const-naming-style=UPPER_CASE
 
-# Regular expression matching correct class constant names. Overrides class-
-# const-naming-style. If left empty, class constant names will be checked with
-# the set naming style.
+# Регулярное выражение, соответствующее правильным именам констант класса. Переопределения class-
+# const-naming-style. Если оставить пустым, имена констант класса будут проверены с помощью
+# заданный стиль именования.
 #class-const-rgx=
 
-# Naming style matching correct class names.
+# Стиль именования соответствует правильным именам классов.
 class-naming-style=PascalCase
 
-# Regular expression matching correct class names. Overrides class-naming-
-# style. If left empty, class names will be checked with the set naming style.
+# Регулярное выражение, соответствующее правильным именам классов. Переопределения class-naming-
+# style. Если оставить пустым, имена классов будут сверяться с заданным стилем именования.
 #class-rgx=
 
-# Naming style matching correct constant names.
+# Стиль именования, соответствующий правильным именам констант.
 const-naming-style=UPPER_CASE
 
-# Regular expression matching correct constant names. Overrides const-naming-
-# style. If left empty, constant names will be checked with the set naming
-# style.
+# Регулярное выражение, соответствующее правильным именам констант. Переопределения const-naming-
+# style. Если оставить пустым, имена констант будут сверяться с заданными именами.
+# стиль.
 #const-rgx=
 
-# Minimum line length for functions/classes that require docstrings, shorter
-# ones are exempt.
+# Минимальная длина строки для функций/классов, которым требуются строки документации, короче
+# из них освобождены от налога.
 docstring-min-length=-1
 
-# Naming style matching correct function names.
+# Стиль именования, соответствующий правильным именам функций.
 function-naming-style=snake_case
 
-# Regular expression matching correct function names. Overrides function-
-# naming-style. If left empty, function names will be checked with the set
-# naming style.
+# Регулярное выражение, соответствующее правильным именам функций. Переопределения function-
+# naming-style. Если оставить пустым, имена функций будут сверяться с набором
+# стиль именования.
 #function-rgx=
 
 # Хорошие имена переменных, которые всегда следует принимать, разделяются запятой.
@@ -251,7 +251,7 @@ variable-naming-style=snake_case
 #variable-rgx=
 
 
-[CLASSES | КЛАССЫ]
+[CLASSES]
 
 # Предупреждать о доступе к защищенным атрибутам внутри специальных методов
 check-protected-access-in-special-methods=no
@@ -274,7 +274,7 @@ valid-classmethod-first-arg=cls
 valid-metaclass-classmethod-first-arg=mcs
 
 
-[DESIGN | ДИЗАЙН]
+[DESIGN]
 
 # Список регулярных выражений имен предков классов, которые следует игнорировать при подсчете
 # публичные методы (см. R0903)
@@ -315,13 +315,13 @@ max-statements=50
 min-public-methods=2
 
 
-[EXCEPTIONS | ИСКЛЮЧЕНИЯ]
+[EXCEPTIONS]
 
 # Исключения, при обнаружении которых выдается предупреждение.
 overgeneral-exceptions=builtins.BaseException,builtins.Exception
 
 
-[FORMAT | ФОРМАТ]
+[FORMAT]
 
 # Ожидаемый формат окончания строки, например. пустой (любое окончание строки), LF или CRLF.
 expected-line-ending-format=
@@ -351,7 +351,7 @@ single-line-class-stmt=no
 single-line-if-stmt=no
 
 
-[IMPORTS | ИМПОРТ]
+[IMPORTS]
 
 # Список модулей, которые можно импортировать на любом уровне, а не только на верхнем уровне.
 # один.
@@ -390,7 +390,7 @@ known-third-party=enchant
 preferred-modules=
 
 
-[LOGGING | ВЕДЕНИЕ ЖУРНАЛА]
+[LOGGING]
 
 # Тип форматирования строк, который выполняют методы журналирования. «старый» означает использование %
 # форматирование, `new` предназначен для форматирования `{}`.
@@ -401,7 +401,7 @@ logging-format-style=old
 logging-modules=logging
 
 
-[MESSAGES CONTROL | КОНТРОЛЬ СООБЩЕНИЙ]
+[MESSAGES CONTROL]
 
 # Показывать предупреждения только с указанными уровнями достоверности. Оставьте пустым, чтобы показать
 # все. Допустимые уровни: HIGH, CONTROL_FLOW, INFERENCE, INFERENCE_FAILURE,
@@ -441,14 +441,14 @@ disable=raw-checker-failed,
 enable=
 
 
-[METHOD_ARGS | МЕТОД ARGS]
+[METHOD_ARGS]
 
 # Список полных имен (например, Library.method), для которых требуется тайм-аут.
 # параметр например 'requests.api.get,requests.api.post'
 timeout-methods=requests.api.delete,requests.api.get,requests.api.head,requests.api.options,requests.api.patch,requests.api.post,requests.api.put,requests.api.request
 
 
-[MISCELLANEOUS | РАЗНООБРАЗНЫЙ]
+[MISCELLANEOUS]
 
 # Список тегов примечаний, которые следует учитывать, разделенных запятой.
 notes=FIXME,
@@ -459,7 +459,7 @@ notes=FIXME,
 notes-rgx=
 
 
-[REFACTORING | РЕФАКТОРИНГ]
+[REFACTORING]
 
 # Максимальное количество вложенных блоков для тела функции/метода
 max-nested-blocks=5
@@ -471,7 +471,7 @@ max-nested-blocks=5
 never-returning-functions=sys.exit,argparse.parse_error
 
 
-[REPORTS | ОТЧЕТЫ]
+[REPORTS]
 
 # Выражение Python, которое должно возвращать оценку меньше или равную 10. Вы
 # иметь доступ к переменным 'fatal', 'error', 'warning', 'refactor',
@@ -497,7 +497,7 @@ reports=no
 score=yes
 
 
-[SIMILARITIES | СХОДСТВА]
+[SIMILARITIES]
 
 # Комментарии удаляются из расчета сходства.
 ignore-comments=yes
@@ -515,7 +515,7 @@ ignore-signatures=yes
 min-similarity-lines=4
 
 
-[SPELLING | НАПИСАНИЕ]
+[SPELLING]
 
 # Ограничивает количество выдаваемых предложений по поводу орфографических ошибок.
 max-spelling-suggestions=4
@@ -539,7 +539,7 @@ spelling-private-dict-file=
 spelling-store-unknown-words=no
 
 
-[STRING | НИТЬ]
+[STRING]
 
 # Этот флаг определяет, будут ли несогласованные кавычки генерировать предупреждение, когда
 # символ используемый в качестве разделителя кавычек, используется в модуле непоследовательно.
@@ -550,7 +550,7 @@ check-quote-consistency=no
 check-str-concat-over-line-jumps=no
 
 
-[TYPECHECK | ПРОВЕРКА ТИПОВ]
+[TYPECHECK]
 
 # Список декораторов, которые создают менеджеры контекста, такие как
 # contextlib.contextmanager. Добавьте в этот список, чтобы зарегистрировать других декораторов, которые
@@ -604,7 +604,7 @@ mixin-class-rgx=.*[Mm]ixin
 signature-mutators=
 
 
-[VARIABLES | ПЕРЕМЕННЫЕ]
+[VARIABLES]
 
 # Список дополнительных имен, которые должны быть определены во встроенных функциях. Помните, что
 # вам следует избегать определения новых встроенных функций, когда это возможно.

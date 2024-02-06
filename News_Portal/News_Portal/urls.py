@@ -1,7 +1,8 @@
 """
 Конфигурация URL для проекта News_Portal.
 
-Список `urlpatterns` направляет URL-адреса в представления. Для получения дополнительной информации см.:
+Список `urlpatterns` направляет URL-адреса в представления.
+Для получения дополнительной информации см.:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
 Примеры:
 Представления функций
@@ -15,12 +16,12 @@
     2. Добавьте URL-адрес в urlpatterns: path('blog', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('news.urls')),
-    path('accounts/', include('allauth.urls')),  # запросы от пользователей по ссылкам, которые
-    # начинаются с /accounts/
+    path('accounts/', include('allauth.urls')),  # Запросы от пользователей по
+    # ссылкам, которые начинаются с /accounts/
     path('subscriptions/', include('subscriptions.urls')),
 ]
