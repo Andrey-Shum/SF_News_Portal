@@ -158,6 +158,8 @@
 
 --------- DZ-8 (Задание 7.5 (HW-03)) -------------------------------------------
 
+Выполнено не отмечено коммитом
+
 Дополните свой новостной портал:
 
 1 Добавьте кэширование на страницы с новостями (по 5 минут на каждую) и на главную страницу (одну минуту).
@@ -169,6 +171,21 @@
 
 1 Добавьте кеширование для статей. Пока статья не изменилась, она должна сохраняться в кэше.
 
+--------- DZ-13.4 (HW-03) ------------------------------------------------------
+
+Настоящие системы логирования очень распределенные и орудуют большим количеством связанных компонентов. Давайте попробуем создать подобный механизм. Ваши настройки логирования должны выполнять следующее:
+
+1 В консоль должны выводиться все сообщения уровня DEBUG и выше, включающие время, уровень сообщения, сообщения. Для сообщений WARNING и выше дополнительно должен выводиться путь к источнику события (используется аргумент pathname в форматировании). А для сообщений ERROR и CRITICAL еще должен выводить стэк ошибки (аргумент exc_info). Сюда должны попадать все сообщения с основного логгера django.
+
+2 В файл general.log должны выводиться сообщения уровня INFO и выше только с указанием времени, уровня логирования, модуля, в котором возникло сообщение (аргумент module) и само сообщение. Сюда также попадают сообщения с регистратора django.
+
+3 В файл errors.log должны выводиться сообщения только уровня ERROR и CRITICAL. В сообщении указывается время, уровень логирования, само сообщение, путь к источнику сообщения и стэк ошибки. В этот файл должны попадать сообщения только из логгеров django.request, django.server, django.template, django.db.backends.
+
+4 В файл security.log должны попадать только сообщения, связанные с безопасностью, а значит только из логгера django.security. Формат вывода предполагает время, уровень логирования, модуль и сообщение.
+
+5 На почту должны отправляться сообщения уровней ERROR и выше из django.request и django.server по формату, как в errors.log, но без стэка ошибок.
+
+Более того, при помощи фильтров нужно указать, что в консоль сообщения отправляются только при DEBUG = True, а на почту и в файл general.log — только при DEBUG = False.
 
 --------------------------------------------------------------------------------
 English (Английский)
@@ -335,6 +352,8 @@ To successfully complete this final task of the module, you need:
 
 --------- DZ-8 (Task 7.5 (HW-03)) ----------------------------------------------
 
+Completed is not marked with a commit
+
 Complete your news portal:
 
 1 Add caching to the news pages (5 minutes each) and to the main page (one minute).
@@ -345,3 +364,19 @@ In addition, you can use any caching system that you prefer.
 Complete your news portal
 
 1 Add caching for articles. As long as the article has not changed, it should be stored in the cache.
+
+--------- DZ-13.4 (HW-03) ------------------------------------------------------
+
+Real logging systems are very distributed and operate with a large number of connected components. Let's try to create a similar mechanism. Your logging settings should do the following:
+
+1 All messages of the DEBUG level and above, including time, message level, and messages, should be output to the console. For WARNING messages and above, the path to the event source must additionally be output (the pathname argument is used in formatting). And for ERROR and CRITICAL messages, the error stack (the exc_info argument) must also be output. All messages from the main django logger should be included here.
+
+2 The general.log file should display messages of the INFO level and above only indicating the time, logging level, module in which the message originated (module argument) and the message itself. This also includes messages from the django registrar.
+
+3 Only ERROR and CRITICAL level messages should be output to the errors.log file. The message indicates the time, the logging level, the message itself, the path to the source of the message and the error stack. This file should contain messages only from the django.request, django.server, django.template, and django.db loggers.backends.
+
+4 The security.log file should contain only security-related messages, which means only from the django.security logger. The output format assumes time, logging level, module, and message.
+
+5 Messages of ERROR levels and higher from django.request and django.server should be sent to the mail in the format as in errors.log, but without the error stack.
+
+Moreover, using filters, you need to specify that messages are sent to the console only when DEBUG = True, and to the mail and to the general.log file only when DEBUG = False.

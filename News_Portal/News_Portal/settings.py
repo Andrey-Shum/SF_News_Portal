@@ -9,26 +9,24 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 Полный список настроек и их значений см.
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-# import logging
+import logging
 import os.path
 from pathlib import Path
 
 # Создавайте пути внутри проекта следующим образом: BASE_DIR 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Настройки быстрого старта разработки — не подходят для продакшена
+# Настройки быстрого старта разработки — не подходят для продакшена # noqa
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # ВНИМАНИЕ ПО БЕЗОПАСНОСТИ: держите секретный ключ,
-# используемый в производстве, в секрете!
-SECRET_KEY = 'django-insecure-_$q8-n&3ln5-mt*#p32%51^4d(97mmwact2*q@_kun+5$h85ay'  # noqa
+# используемый в производстве, в тайне!
+SECRET_KEY = 'django-insecure-_$q8-n&3ln5-mt*#p32%51^4d(97mmwact2*q@_kun+5$h85ay' # noqa
 
-# ПРЕДУПРЕЖДЕНИЕ: ITY не запускается с включенной отладкой!
+# ПРЕДУПРЕЖДЕНИЕ: ITY не запускается с включённой отладкой!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition (Определение приложения)
 
@@ -91,7 +89,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'News_Portal.wsgi.application'
 
-
 # Database (База данных)
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -102,25 +99,23 @@ DATABASES = {
     }
 }
 
-
 # Password validation (Проверка пароля)
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator', # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator', # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', # noqa
     },
 ]
-
 
 # Internationalization (Интернационализация)
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -133,18 +128,15 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Статические файлы (CSS, JavaScript, изображения)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
 
-
 # Тип поля первичного ключа по умолчанию
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 #  После входа, пользователя перенаправляем на страницу с новостями.
 LOGIN_REDIRECT_URL = "/news"
@@ -173,12 +165,12 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-# 'none' - проверка email — отсутствует;
+# 'None' - проверка email — отсутствует;
 # 'mandatory' — не пускать пользователя на сайт до момента подтверждения почты;
 # 'optional' — сообщение о подтверждении почты будет отправлено, но
 # пользователь может залогиниться на сайте без подтверждения почты.
 # Чтобы allauth распознал нашу форму как ту, что должна выполняться вместо
-# формы по умолчанию, необходимо добавить
+# формы по умолчанию, необходимо добавить.
 ACCOUNT_FORMS = {"signup": "accounts.forms.CustomSignupForm"}
 
 # Блок кода настроек нашего проекта работы с почтой (Yandex-почтой)
@@ -188,10 +180,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # класс отправителя сообщений (у нас установлено значение по умолчанию,
 # а значит, эта строчка не обязательна)
 EMAIL_HOST = 'smtp.yandex.ru'
-# Хост почтового сервера - это адрес или доменное имя сервера, который
+# Хост почтового сервера — это адрес или доменное имя сервера, который
 # обрабатывает и отправляет электронную почту.
 # Хост почтового сервера может быть использован как для отправки, так и для
-# получения почты
+# получения почты.
 EMAIL_PORT = 465
 """
 Порт, на который почтовый сервер принимает письма, называется почтовым портом.
@@ -207,7 +199,7 @@ EMAIL_PORT = 465
 """
 EMAIL_HOST_USER = "AndreyTestSF"
 # логин пользователя почтового сервера
-EMAIL_HOST_PASSWORD = "zuqvkobqbkixymje"
+EMAIL_HOST_PASSWORD = "zuqvkobqbkixymje"  # noqa
 # пароль пользователя почтового сервера
 EMAIL_USE_TLS = False
 # необходимость использования TLS
@@ -222,7 +214,7 @@ DEFAULT_FROM_EMAIL = "AndreyTestSF@yandex.ru"
 # Почтовый адрес отправителя по умолчанию
 # Последняя строчка будет использоваться как значение по умолчанию
 # для поля from в письме.
-# То есть будет отображаться в поле «отправитель» у получателя письма
+# То есть будет отображаться в поле «отправитель» у получателя письма.
 
 SERVER_EMAIL = "AndreyTestSF@yandex.ru"
 # SERVER_EMAIL содержит адрес почты, от имени которой будет отправляться письмо
@@ -247,8 +239,85 @@ CELERY_TIMEZONE = 'Europe/Moscow'
 
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache', # noqa
         'LOCATION': os.path.join(BASE_DIR, 'cache_files'),
         # Не забываем создать папку cache_files внутри папки с manage.py!
     }
 }
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+
+    'formatters': {
+        # Фильтр сообщения уровня DEBUG и выше, включающие:
+        # время, уровень сообщения, сообщения.
+        'custom-format-D': {
+            'format': '%(asctime)s %(levelname)s %(message)s'  # noqa
+        },
+        # Для INFO выводиться время, уровень, модуль и сообщение.
+        'custom-format-I': {
+            'format': '%(asctime)s %(levelname)s %(module)s %(message)s' # noqa
+        },
+        # Для WARNING дополнительно выводиться путь к источнику события
+        'custom-format-W': {
+            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s'  # noqa
+        },
+        # Для ERROR и CRITICAL выводить стэк ошибки
+        'custom-format-EC': {
+            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s %(exc_info)s'  # noqa
+        },
+    },
+    'handlers': {
+        # вывод в консоль уровня DEBUG
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'custom-format-D',
+        },
+        # вывод в general.log уровень INFO
+        'general_file': {
+            'class': 'logging.FileHandler',
+            'filename': 'logs/general.log',
+            'level': 'INFO',
+            'formatter': 'custom-format-I'
+        },
+        # вывод в errors.log уровень ERROR и CRITICAL
+        'errors_file': {
+            'class': 'logging.FileHandler',
+            'filename': 'logs/errors.log',
+            'level': 'ERROR',
+            'formatter': 'custom-format-EC'
+        },
+        # вывод в security.log уровень INFO
+        'security_file': {
+            'class': 'logging.FileHandler',
+            'filename': 'logs/security.log',
+            'level': 'INFO',
+            'formatter': 'custom-format-W'
+        },
+        # отправка на почту ERROR и CRITICAL
+        'mail_admins': {
+            'class': 'django.utils.log.AdminEmailHandler',
+            'level': 'ERROR',
+            'formatter': 'custom-format-EC'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': [
+                'console',
+                'general_file',
+                'errors_file',
+                'mail_admins'
+            ],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.security': {
+            'handlers': ['security_file', 'mail_admins'],
+            'level': 'INFO'
+        },
+    },
+}
+
+logger = logging.getLogger("django")
