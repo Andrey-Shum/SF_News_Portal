@@ -28,6 +28,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# DEBUG = False
+#
+# ALLOWED_HOSTS = ["http://127.0.0.1:8000/"]
+
 # Application definition (Определение приложения)
 
 INSTALLED_APPS = [
@@ -267,43 +271,63 @@ LOGGING = {
         'custom-format-EC': {
             'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s %(exc_info)s'  # noqa
         },
+        'email_format': {
+            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s'
+        },
+    },
+    'filters': {
+        'If_Debug_False': {
+            # Только при DEBUG=False
+            '()': 'django.utils.log.RequireDebugFalse'
+        },
+        "If_Debug_True": {
+            "()": "django.utils.log.RequireDebugTrue",
+        }
+
     },
     'handlers': {
         # вывод в консоль уровня DEBUG
         'console': {
             'class': 'logging.StreamHandler',
             'formatter': 'custom-format-D',
+            'level': 'DEBUG',
+            'filters': ['If_Debug_True']
+
         },
         # вывод в general.log уровень INFO
         'general_file': {
             'class': 'logging.FileHandler',
             'filename': 'logs/general.log',
             'level': 'INFO',
-            'formatter': 'custom-format-I'
+            'formatter': 'custom-format-I',
+            'filters': ['If_Debug_False']
         },
         # вывод в errors.log уровень ERROR и CRITICAL
         'errors_file': {
             'class': 'logging.FileHandler',
             'filename': 'logs/errors.log',
             'level': 'ERROR',
-            'formatter': 'custom-format-EC'
+            'formatter': 'custom-format-EC',
+            'filters': ['If_Debug_True']
         },
         # вывод в security.log уровень INFO
         'security_file': {
             'class': 'logging.FileHandler',
             'filename': 'logs/security.log',
             'level': 'INFO',
-            'formatter': 'custom-format-W'
+            'formatter': 'custom-format-W',
+            'filters': ['If_Debug_True']
         },
         # отправка на почту ERROR и CRITICAL
         'mail_admins': {
             'class': 'django.utils.log.AdminEmailHandler',
             'level': 'ERROR',
-            'formatter': 'custom-format-EC'
+            'formatter': 'email_format',
+            'filters': ['If_Debug_False']
         },
     },
     'loggers': {
-        'django': {
+        'django': { # Принимает все сообщения, но в него ничего не записывается
             'handlers': [
                 'console',
                 'general_file',
@@ -313,9 +337,20 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': True,
         },
-        'django.security': {
+        'django.request': {  # Сообщения связанные с ошибками обработки запроса
+            'handlers': ['errors_file', 'mail_admins'],
+            'level': 'ERROR',
+            'propagate': True
+        },
+        'django.server': {  # Сообщения возникающие при запуске приложения
+            'handlers': ['errors_file', 'mail_admins'],
+            'level': 'ERROR',
+            'propagate': True
+        },
+        'django.security': {  # Регистрирующих события нарушения безопасности
             'handlers': ['security_file', 'mail_admins'],
-            'level': 'INFO'
+            'level': 'INFO',
+            'propagate': True,
         },
     },
 }

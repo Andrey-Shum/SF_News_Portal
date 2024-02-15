@@ -1,1 +1,3 @@
 2024-02-10 13:47:44,424 INFO autoreload Watching for file changes with StatReloader
+2024-02-15 12:10:48,474 INFO autoreload Watching for file changes with StatReloader
+2024-02-15 12:12:52,213 INFO autoreload /home/shum/git/SF_News_Portal/News_Portal/News_Portal/settings.py changed, reloading.
