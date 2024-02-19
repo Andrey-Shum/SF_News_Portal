@@ -249,6 +249,7 @@ CACHES = {
     }
 }
 
+# Логирование
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -292,8 +293,19 @@ LOGGING = {
             'formatter': 'custom-format-D',
             'level': 'DEBUG',
             'filters': ['If_Debug_True']
-
         },
+        "console_error": {
+            "class": "logging.StreamHandler",
+            "formatter": "custom-format-W",
+            "filters": ['If_Debug_True'],
+            "level": "ERROR",
+            },
+        "console_warning": {
+            "class": "logging.StreamHandler",
+            "formatter": "custom-format-EC",
+            "filters": ['If_Debug_True'],
+            "level": "WARNING",
+            },
         # вывод в general.log уровень INFO
         'general_file': {
             'class': 'logging.FileHandler',
@@ -307,23 +319,20 @@ LOGGING = {
             'class': 'logging.FileHandler',
             'filename': 'logs/errors.log',
             'level': 'ERROR',
-            'formatter': 'custom-format-EC',
-            'filters': ['If_Debug_True']
+            'formatter': 'custom-format-EC'
         },
         # вывод в security.log уровень INFO
         'security_file': {
             'class': 'logging.FileHandler',
             'filename': 'logs/security.log',
             'level': 'INFO',
-            'formatter': 'custom-format-W',
-            'filters': ['If_Debug_True']
+            'formatter': 'custom-format-W'
         },
         # отправка на почту ERROR и CRITICAL
         'mail_admins': {
             'class': 'django.utils.log.AdminEmailHandler',
             'level': 'ERROR',
-            'formatter': 'email_format',
-            'filters': ['If_Debug_False']
+            'formatter': 'email_format'
         },
     },
     'loggers': {
@@ -346,6 +355,16 @@ LOGGING = {
             'handlers': ['errors_file', 'mail_admins'],
             'level': 'ERROR',
             'propagate': True
+        },
+        'django.template': {  # Регистрирующих события с шаблонами
+            'handlers': ['errors_file'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.db.backends': {  # Регистрирующих события в БД
+            'handlers': ['errors_file'],
+            'level': 'ERROR',
+            'propagate': False,
         },
         'django.security': {  # Регистрирующих события нарушения безопасности
             'handlers': ['security_file', 'mail_admins'],
