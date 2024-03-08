@@ -2,7 +2,6 @@ from django.urls import path, include
 from django.views.decorators.cache import cache_page
 from . import views
 from .views import NewsList, NewsDetail, Search, NewsEdit, NewsDelete, ArticleEdit, ArticleDelete
-from django.conf.urls.i18n import i18n_patterns
 
 app_name = 'news'
 
@@ -34,8 +33,3 @@ urlpatterns = [
     path('articles/<int:pk>/delete/', ArticleDelete.as_view(), name='article_delete'),
     # URL-шаблон для удаления статьи
 ]
-
-urlpatterns += i18n_patterns(
-    # ... your other URL patterns ...
-    path('set_language/', SetLanguageView.as_view(), name='set_language'),
-)
