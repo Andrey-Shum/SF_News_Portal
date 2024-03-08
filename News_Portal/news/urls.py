@@ -1,17 +1,24 @@
-from django.urls import path
+from django.urls import path, include
 from django.views.decorators.cache import cache_page
 from . import views
 from .views import NewsList, NewsDetail, Search, NewsEdit, NewsDelete, ArticleEdit, ArticleDelete
+from django.conf.urls.i18n import i18n_patterns
 
 app_name = 'news'
 
 urlpatterns = [
-    path('', views.Start_Padge, name='Start'),  # URL-шаблон Стартовой страницы
-    path('search/', Search.as_view(), name='search'),  # URL-шаблон Поисковой страницы
-    path('news/', NewsList.as_view(), name='news_list'),  # URL-шаблон для списка новостей
+    path('i18n/', include('django.conf.urls.i18n')),
+    # подключаем встроенные эндопинты для работы с локализацией
+    path('', views.Start_Padge, name='Start'),
+    # URL-шаблон Стартовой страницы
+    path('search/', Search.as_view(), name='search'),
+    # URL-шаблон Поисковой страницы
+    path('news/', NewsList.as_view(), name='news_list'),
+    # URL-шаблон для списка новостей
     path('news/<int:pk>/', cache_page(60*5)(NewsDetail.as_view()), name='news_detail'),
     # URL-шаблон списка новостей
-    path('article/', views.article_list, name='article_list'),  # URL-шаблон для списка статей
+    path('article/', views.article_list, name='article_list'),
+    # URL-шаблон для списка статей
     path('articles/<int:post_id>/', views.article_detail, name='article_detail'),
     # URL-шаблон для статьи
     path('news/create/', views.NewsCreate.as_view(), name='news_create'),
@@ -26,5 +33,9 @@ urlpatterns = [
     # URL-шаблон для редактирования статьи
     path('articles/<int:pk>/delete/', ArticleDelete.as_view(), name='article_delete'),
     # URL-шаблон для удаления статьи
-
 ]
+
+urlpatterns += i18n_patterns(
+    # ... your other URL patterns ...
+    path('set_language/', SetLanguageView.as_view(), name='set_language'),
+)

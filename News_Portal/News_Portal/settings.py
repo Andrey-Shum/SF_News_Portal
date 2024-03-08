@@ -59,6 +59,9 @@ SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+
+    'django.middleware.locale.LocaleMiddleware',  # Подключить для Локализации
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -93,6 +96,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'News_Portal.wsgi.application'
 
+# Ограничиваем этим списком кортежей, языки
+# чтобы были только те на которые есть перевод.
+LANGUAGES = [
+    ('en', 'English'),
+    ('ru', 'Русский')
+]
+
 # Database (База данных)
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -124,13 +134,17 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization (Интернационализация)
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'ru-RU'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
 USE_TZ = True
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')  # Папка для хранения переводов
+]
 
 # Статические файлы (CSS, JavaScript, изображения)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -250,128 +264,128 @@ CACHES = {
 }
 
 # Логирование
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-
-    'formatters': {
-        # Фильтр сообщения уровня DEBUG и выше, включающие:
-        # время, уровень сообщения, сообщения.
-        'custom-format-D': {
-            'format': '%(asctime)s %(levelname)s %(message)s'  # noqa
-        },
-        # Для INFO выводиться время, уровень, модуль и сообщение.
-        'custom-format-I': {
-            'format': '%(asctime)s %(levelname)s %(module)s %(message)s' # noqa
-        },
-        # Для WARNING дополнительно выводиться путь к источнику события
-        'custom-format-W': {
-            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s'  # noqa
-        },
-        # Для ERROR и CRITICAL выводить стэк ошибки
-        'custom-format-EC': {
-            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s %(exc_info)s'  # noqa
-        },
-        'email_format': {
-            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s'
-        },
-    },
-    'filters': {
-        'If_Debug_False': {
-            # Только при DEBUG=False
-            '()': 'django.utils.log.RequireDebugFalse'
-        },
-        "If_Debug_True": {
-            "()": "django.utils.log.RequireDebugTrue",
-        }
-
-    },
-    'handlers': {
-        # вывод в консоль уровня DEBUG
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'custom-format-D',
-            'level': 'DEBUG',
-            'filters': ['If_Debug_True']
-        },
-        "console_error": {
-            "class": "logging.StreamHandler",
-            "formatter": "custom-format-W",
-            "filters": ['If_Debug_True'],
-            "level": "ERROR",
-            },
-        "console_warning": {
-            "class": "logging.StreamHandler",
-            "formatter": "custom-format-EC",
-            "filters": ['If_Debug_True'],
-            "level": "WARNING",
-            },
-        # вывод в general.log уровень INFO
-        'general_file': {
-            'class': 'logging.FileHandler',
-            'filename': 'logs/general.log',
-            'level': 'INFO',
-            'formatter': 'custom-format-I',
-            'filters': ['If_Debug_False']
-        },
-        # вывод в errors.log уровень ERROR и CRITICAL
-        'errors_file': {
-            'class': 'logging.FileHandler',
-            'filename': 'logs/errors.log',
-            'level': 'ERROR',
-            'formatter': 'custom-format-EC'
-        },
-        # вывод в security.log уровень INFO
-        'security_file': {
-            'class': 'logging.FileHandler',
-            'filename': 'logs/security.log',
-            'level': 'INFO',
-            'formatter': 'custom-format-W'
-        },
-        # отправка на почту ERROR и CRITICAL
-        'mail_admins': {
-            'class': 'django.utils.log.AdminEmailHandler',
-            'level': 'ERROR',
-            'formatter': 'email_format'
-        },
-    },
-    'loggers': {
-        'django': { # Принимает все сообщения, но в него ничего не записывается
-            'handlers': [
-                'console',
-                'general_file',
-                'errors_file',
-                'mail_admins'
-            ],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-        'django.request': {  # Сообщения связанные с ошибками обработки запроса
-            'handlers': ['errors_file', 'mail_admins'],
-            'level': 'ERROR',
-            'propagate': True
-        },
-        'django.server': {  # Сообщения возникающие при запуске приложения
-            'handlers': ['errors_file', 'mail_admins'],
-            'level': 'ERROR',
-            'propagate': True
-        },
-        'django.template': {  # Регистрирующих события с шаблонами
-            'handlers': ['errors_file'],
-            'level': 'ERROR',
-            'propagate': False,
-        },
-        'django.db.backends': {  # Регистрирующих события в БД
-            'handlers': ['errors_file'],
-            'level': 'ERROR',
-            'propagate': False,
-        },
-        'django.security': {  # Регистрирующих события нарушения безопасности
-            'handlers': ['security_file', 'mail_admins'],
-            'level': 'INFO',
-            'propagate': True,
-        },
-    },
-}
-
-logger = logging.getLogger("django")
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#
+#     'formatters': {
+#         # Фильтр сообщения уровня DEBUG и выше, включающие:
+#         # время, уровень сообщения, сообщения.
+#         'custom-format-D': {
+#             'format': '%(asctime)s %(levelname)s %(message)s'  # noqa
+#         },
+#         # Для INFO выводиться время, уровень, модуль и сообщение.
+#         'custom-format-I': {
+#             'format': '%(asctime)s %(levelname)s %(module)s %(message)s' # noqa
+#         },
+#         # Для WARNING дополнительно выводиться путь к источнику события
+#         'custom-format-W': {
+#             'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s'  # noqa
+#         },
+#         # Для ERROR и CRITICAL выводить стэк ошибки
+#         'custom-format-EC': {
+#             'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s %(exc_info)s'  # noqa
+#         },
+#         'email_format': {
+#             'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s'
+#         },
+#     },
+#     'filters': {
+#         'If_Debug_False': {
+#             # Только при DEBUG=False
+#             '()': 'django.utils.log.RequireDebugFalse'
+#         },
+#         "If_Debug_True": {
+#             "()": "django.utils.log.RequireDebugTrue",
+#         }
+#
+#     },
+#     'handlers': {
+#         # вывод в консоль уровня DEBUG
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'custom-format-D',
+#             'level': 'DEBUG',
+#             'filters': ['If_Debug_True']
+#         },
+#         "console_error": {
+#             "class": "logging.StreamHandler",
+#             "formatter": "custom-format-W",
+#             "filters": ['If_Debug_True'],
+#             "level": "ERROR",
+#             },
+#         "console_warning": {
+#             "class": "logging.StreamHandler",
+#             "formatter": "custom-format-EC",
+#             "filters": ['If_Debug_True'],
+#             "level": "WARNING",
+#             },
+#         # вывод в general.log уровень INFO
+#         'general_file': {
+#             'class': 'logging.FileHandler',
+#             'filename': 'logs/general.log',
+#             'level': 'INFO',
+#             'formatter': 'custom-format-I',
+#             'filters': ['If_Debug_False']
+#         },
+#         # вывод в errors.log уровень ERROR и CRITICAL
+#         'errors_file': {
+#             'class': 'logging.FileHandler',
+#             'filename': 'logs/errors.log',
+#             'level': 'ERROR',
+#             'formatter': 'custom-format-EC'
+#         },
+#         # вывод в security.log уровень INFO
+#         'security_file': {
+#             'class': 'logging.FileHandler',
+#             'filename': 'logs/security.log',
+#             'level': 'INFO',
+#             'formatter': 'custom-format-W'
+#         },
+#         # отправка на почту ERROR и CRITICAL
+#         'mail_admins': {
+#             'class': 'django.utils.log.AdminEmailHandler',
+#             'level': 'ERROR',
+#             'formatter': 'email_format'
+#         },
+#     },
+#     'loggers': {
+#         'django': { # Принимает все сообщения, но в него ничего не записывается
+#             'handlers': [
+#                 'console',
+#                 'general_file',
+#                 'errors_file',
+#                 'mail_admins'
+#             ],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#         'django.request': {  # Сообщения связанные с ошибками обработки запроса
+#             'handlers': ['errors_file', 'mail_admins'],
+#             'level': 'ERROR',
+#             'propagate': True
+#         },
+#         'django.server': {  # Сообщения возникающие при запуске приложения
+#             'handlers': ['errors_file', 'mail_admins'],
+#             'level': 'ERROR',
+#             'propagate': True
+#         },
+#         'django.template': {  # Регистрирующих события с шаблонами
+#             'handlers': ['errors_file'],
+#             'level': 'ERROR',
+#             'propagate': False,
+#         },
+#         'django.db.backends': {  # Регистрирующих события в БД
+#             'handlers': ['errors_file'],
+#             'level': 'ERROR',
+#             'propagate': False,
+#         },
+#         'django.security': {  # Регистрирующих события нарушения безопасности
+#             'handlers': ['security_file', 'mail_admins'],
+#             'level': 'INFO',
+#             'propagate': True,
+#         },
+#     },
+# }
+#
+# logger = logging.getLogger("django")

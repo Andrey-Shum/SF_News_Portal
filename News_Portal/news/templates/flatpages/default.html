@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+{% load i18n %}
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Bare - News Portal</title>
+        {% get_current_language as current_language %}
+        <title>{{ _("Bare - News Portal") }}</title>
         <!-- Основная тема CSS (включает Bootstrap)-->
         {% load static %}
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
@@ -13,10 +15,12 @@
     <body>
         {% load cache %}
         {% cache 600 navbar request.path %}
+
         <!-- Адаптивная навигация-->
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
              <div class="container">
-                 <a class="navbar-brand" href="/">News Portal</a>
+                 {% include 'flatpages/localeBar.html' %} <!-- Вставьте здесь переключатель языка -->
+                 <a class="navbar-brand" href="/">{{ _("News Portal") }}</a>
                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                          data-bs-target="#navbarSupportedContent"
                          aria-controls="navbarSupportedContent"
@@ -24,21 +28,21 @@
                          aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                         <li class="nav-item"><a class="nav-link" href="/admin/">fo Admin</a></li>
-                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
-                         <li class="nav-item"><a class="nav-link" href="/accounts/login/">Войти</a></li>
+                         <li class="nav-item"><a class="nav-link" href="/admin/">{{ _("fo Admin") }}</a></li>
+                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">{{ _("Home") }}</a></li>
+                         <li class="nav-item"><a class="nav-link" href="/accounts/login/">{{ _("Log in") }}</a></li>
                          <li class="nav-item dropdown">
                              <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                                data-bs-toggle="dropdown" aria-expanded="false">{{ _("Menu") }}</a>
                              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                 <li><a class="dropdown-item" href="/search/">Поиск</a></li>
-                                 <li><a class="dropdown-item" href="/news/">Новости</a></li>
-                                 <li><a class="dropdown-item" href="/article/">Статьи</a></li>
-                                 <li><a class="dropdown-item" href="/subscriptions/">Подписки</a></li>
-                                 <li><a class="dropdown-item" href="/news/create/">Добавить новость</a></li>
-                                 <li><a class="dropdown-item" href="/articles/create/">Добавить статью</a></li>
+                                 <li><a class="dropdown-item" href="/search/">{{ _("Search") }}</a></li>
+                                 <li><a class="dropdown-item" href="/news/">{{ _("News") }}</a></li>
+                                 <li><a class="dropdown-item" href="/article/">{{ _("Article") }}</a></li>
+                                 <li><a class="dropdown-item" href="/subscriptions/">{{ _("Subscriptions") }}</a></li>
+                                 <li><a class="dropdown-item" href="/news/create/">{{ _("Add news") }}</a></li>
+                                 <li><a class="dropdown-item" href="/articles/create/">{{ _("Add an article") }}</a></li>
                                  <li><hr class="dropdown-divider" /></li>
-                                 <li><a class="dropdown-item" href="/accounts/logout/">Выход</a></li>
+                                 <li><a class="dropdown-item" href="/accounts/logout/">{{ _("Exit") }}</a></li>
                             </ul>
                         </li>
                     </ul>

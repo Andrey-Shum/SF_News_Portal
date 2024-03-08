@@ -1,0 +1,372 @@
+2024-02-28 03:35:17,393 ERROR Internal Server Error: / /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 18: 'get_current_language', expected 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7f108c8e3700>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_current_language'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 29, in Start_Padge
+    return render(request, 'flatpages/Start.html', {'news': news})
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/templatetags/cache.py", line 84, in do_cache
+    nodelist = parser.parse(("endcache",))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 18: 'get_current_language', expected 'endcache'. Did you forget to register or load this tag?
+2024-02-28 03:35:17,393 ERROR Internal Server Error: / /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 18: 'get_current_language', expected 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7f108c8e3700>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_current_language'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 29, in Start_Padge
+    return render(request, 'flatpages/Start.html', {'news': news})
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/templatetags/cache.py", line 84, in do_cache
+    nodelist = parser.parse(("endcache",))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 18: 'get_current_language', expected 'endcache'. Did you forget to register or load this tag?
+2024-02-28 03:35:17,614 ERROR "GET / HTTP/1.1" 500 224261 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-02-28 03:35:17,614 ERROR "GET / HTTP/1.1" 500 224261 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-02-28 03:37:00,399 ERROR Internal Server Error: / /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 18: 'get_current_language', expected 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7f108ca21840>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_current_language'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 29, in Start_Padge
+    return render(request, 'flatpages/Start.html', {'news': news})
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/templatetags/cache.py", line 84, in do_cache
+    nodelist = parser.parse(("endcache",))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 18: 'get_current_language', expected 'endcache'. Did you forget to register or load this tag?
+2024-02-28 03:37:00,399 ERROR Internal Server Error: / /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 18: 'get_current_language', expected 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7f108ca21840>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_current_language'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 29, in Start_Padge
+    return render(request, 'flatpages/Start.html', {'news': news})
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/templatetags/cache.py", line 84, in do_cache
+    nodelist = parser.parse(("endcache",))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 18: 'get_current_language', expected 'endcache'. Did you forget to register or load this tag?
+2024-02-28 03:37:00,583 ERROR "GET / HTTP/1.1" 500 224249 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-02-28 03:37:00,583 ERROR "GET / HTTP/1.1" 500 224249 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-08 14:47:14,160 ERROR Internal Server Error: / /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name."), <traceback object at 0x7fd53012e480>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 28, in Start_Padge
+    return render(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/templatetags/cache.py", line 53, in render
+    value = self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 208, in render
+    return template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 177, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+2024-03-08 14:47:14,160 ERROR Internal Server Error: / /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name."), <traceback object at 0x7fd53012e480>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 28, in Start_Padge
+    return render(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/templatetags/cache.py", line 53, in render
+    value = self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 208, in render
+    return template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 177, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+2024-03-08 14:47:14,354 ERROR "GET / HTTP/1.1" 500 212953 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-08 14:47:14,354 ERROR "GET / HTTP/1.1" 500 212953 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None

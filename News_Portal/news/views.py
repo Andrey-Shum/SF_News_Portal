@@ -25,7 +25,11 @@ get_object_or_404 - используется для получения объе�
 @cache_page(60)  # кэширование на 1 минут (60 сек)
 def Start_Padge(request):
     news = Post.objects.filter(type='NW').order_by('-creationDate')[:4]
-    return render(request, 'flatpages/Start.html', {'news': news})
+    return render(
+        request,
+        'flatpages/Start.html',
+        {'news': news}
+    )
 
 
 # ====== Новости ===============================================================
@@ -98,7 +102,11 @@ def article_list(request):
     paginator = Paginator(article, 2)
     page = request.GET.get('page')
     articles = paginator.get_page(page)
-    return render(request, 'news/article_list.html', {'articles': articles})
+    return render(
+        request,
+        'news/article_list.html',
+        {'articles': articles}
+    )
 
 
 # def article_detail(request, post_id):
