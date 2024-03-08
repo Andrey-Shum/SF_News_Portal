@@ -16,21 +16,19 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: news/templates/account/email/base_message.txt:1
 #, python-format
 msgid "Hello from %(site_name)s!"
-msgstr "Привет с %(site_name)s!"
+msgstr "Bonjour de %(site_name)s!"
 
 #: news/templates/account/email/base_message.txt:5
 #, python-format
 msgid ""
 "Thanks for using %(site_name)s!\n"
 "%(site_domain)s"
-msgstr "Спасибо за использование %(site_name)s!\n"
+msgstr "Merci d'utiliser %(site_name)s!\n"
 
 #: news/templates/account/email/email_confirmation_message.txt:5
 #, python-format
@@ -42,58 +40,58 @@ msgid ""
 "\n"
 "Have a good day!\n"
 msgstr ""
-"Вы получили это сообщение, потому что пользователь %(user_display)s указал "
-"этот email при регистрации на сайте %(site_domain)s.\n"
+"Vous avez reçu ce message car un utilisateur%(user_display)s l'a "
+"indiquéemail lors de l'inscription sur le site%(site_domain)s.\n"
 "\n"
-"Для подтверждения регистрации перейдите по ссылке %(activate_url)s \n"
+"Pour confirmer votre inscription, suivez le lien %(activate_url)s\n"
 "\n"
-"Хорошего дня!\n"
+"Passez une bonne journée!\n"
 
 #: news/templates/flatpages/default.html:10
 #: news/templates/flatpages/default.html:22
 msgid "News Portal"
-msgstr "Новостной портал"
+msgstr "Portail d'actualités"
 
 #: news/templates/flatpages/default.html:31
 msgid "fo Admin"
-msgstr "для админа"
+msgstr "pour l'administrateur"
 
 #: news/templates/flatpages/default.html:32
 msgid "Home"
-msgstr "Домашняя страница"
+msgstr "Maison"
 
 #: news/templates/flatpages/default.html:33
 msgid "Log in"
-msgstr "Вход"
+msgstr "Se connecter"
 
 #: news/templates/flatpages/default.html:36
 msgid "Menu"
-msgstr "Меню"
+msgstr "Menu"
 
 #: news/templates/flatpages/default.html:38
 msgid "Search"
-msgstr "Поиск"
+msgstr "Recherche"
 
 #: news/templates/flatpages/default.html:39
 msgid "News"
-msgstr "Новости"
+msgstr "Nouvelles"
 
 #: news/templates/flatpages/default.html:40
 msgid "Article"
-msgstr "Статьи"
+msgstr "Article"
 
 #: news/templates/flatpages/default.html:41
 msgid "Subscriptions"
-msgstr "Подписки"
+msgstr "Abonnements"
 
 #: news/templates/flatpages/default.html:42
 msgid "Add news"
-msgstr "Добавить новость"
+msgstr "Ajouter des nouvelles"
 
 #: news/templates/flatpages/default.html:43
 msgid "Add an article"
-msgstr "Добавить статью"
+msgstr "Ajouter un article"
 
 #: news/templates/flatpages/default.html:45
 msgid "Exit"
-msgstr "Выход"
+msgstr "Sortie"

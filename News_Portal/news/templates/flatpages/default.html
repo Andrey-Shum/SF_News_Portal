@@ -7,7 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         {% get_current_language as current_language %}
-        <title>{{ _("Bare - News Portal") }}</title>
+        <title>{{ _("News Portal") }}</title>
         <!-- Основная тема CSS (включает Bootstrap)-->
         {% load static %}
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
@@ -19,8 +19,8 @@
         <!-- Адаптивная навигация-->
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
              <div class="container">
-                 {% include 'flatpages/localeBar.html' %} <!-- Вставьте здесь переключатель языка -->
                  <a class="navbar-brand" href="/">{{ _("News Portal") }}</a>
+                 {% include 'flatpages/localeBar.html' %} <!-- Вставьте здесь переключатель языка -->
                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                          data-bs-target="#navbarSupportedContent"
                          aria-controls="navbarSupportedContent"

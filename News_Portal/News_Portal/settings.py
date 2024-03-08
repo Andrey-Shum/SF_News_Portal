@@ -100,6 +100,7 @@ WSGI_APPLICATION = 'News_Portal.wsgi.application'
 # чтобы были только те на которые есть перевод.
 LANGUAGES = [
     ('en', 'English'),
+    ('fr', 'French'),
     ('ru', 'Русский')
 ]
 

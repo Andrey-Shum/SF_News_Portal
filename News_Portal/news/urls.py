@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from django.views.decorators.cache import cache_page
 from . import views
 from .views import NewsList, NewsDetail, Search, NewsEdit, NewsDelete, ArticleEdit, ArticleDelete
@@ -6,8 +6,6 @@ from .views import NewsList, NewsDetail, Search, NewsEdit, NewsDelete, ArticleEd
 app_name = 'news'
 
 urlpatterns = [
-    path('i18n/', include('django.conf.urls.i18n')),
-    # подключаем встроенные эндопинты для работы с локализацией
     path('', views.Start_Padge, name='Start'),
     # URL-шаблон Стартовой страницы
     path('search/', Search.as_view(), name='search'),
