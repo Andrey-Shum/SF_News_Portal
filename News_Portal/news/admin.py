@@ -2,6 +2,8 @@ from django.contrib import admin
 
 from .models import Author, Category, Post, Comment
 from django.db.models import F
+from modeltranslation.admin import TranslationAdmin  # импортируем модель амдинки
+# (вспоминаем переопределение стандартных админ-инструментов)
 
 
 # напишем уже знакомую нам функцию обнуления рейтинга поста
@@ -96,6 +98,14 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name',)
     list_filter = ('name',)
     search_fields = ('name',)
+
+
+class CategoryAdmin(TranslationAdmin):
+    model = Category
+
+
+class MyModelAdmin(TranslationAdmin):
+    model = Post
 
 
 admin.site.register(Author, AuthorAdmin)

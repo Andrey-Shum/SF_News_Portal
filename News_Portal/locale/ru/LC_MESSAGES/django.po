@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-08 17:46+0300\n"
+"POT-Creation-Date: 2024-03-09 09:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,18 +19,20 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-
 #: news/templates/account/email/base_message.txt:1
 #, python-format
 msgid "Hello from %(site_name)s!"
-msgstr "Привет с %(site_name)s!"
+msgstr ""
+"Привет от %(site_name)s!"
 
 #: news/templates/account/email/base_message.txt:5
 #, python-format
 msgid ""
 "Thanks for using %(site_name)s!\n"
 "%(site_domain)s"
-msgstr "Спасибо за использование %(site_name)s!\n"
+msgstr ""
+"Спасибо за использование %(site_name)s!\n"
+"%(site_domain)s"
 
 #: news/templates/account/email/email_confirmation_message.txt:5
 #, python-format
@@ -42,58 +44,74 @@ msgid ""
 "\n"
 "Have a good day!\n"
 msgstr ""
-"Вы получили это сообщение, потому что пользователь %(user_display)s указал "
-"этот email при регистрации на сайте %(site_domain)s.\n"
+"Вы получили это сообщение, потому что пользователь %(user_display)s указал это "
+"email при регистрации на сайте %(site_domain)s.\n"
 "\n"
-"Для подтверждения регистрации перейдите по ссылке %(activate_url)s \n"
+"Для подтверждения регистрации перейдите по ссылке %(activate_url)s\n"
 "\n"
 "Хорошего дня!\n"
 
 #: news/templates/flatpages/default.html:10
+msgid "Portal News"
+msgstr ""
+"Портал новостей"
+
 #: news/templates/flatpages/default.html:22
 msgid "News Portal"
-msgstr "Новостной портал"
+msgstr ""
+"Новостной портал"
 
 #: news/templates/flatpages/default.html:31
 msgid "fo Admin"
-msgstr "для админа"
+msgstr ""
+"Администраторская"
 
 #: news/templates/flatpages/default.html:32
 msgid "Home"
-msgstr "Домашняя страница"
+msgstr ""
+"Домашняя"
 
 #: news/templates/flatpages/default.html:33
 msgid "Log in"
-msgstr "Вход"
+msgstr ""
+"Авторизоваться"
 
 #: news/templates/flatpages/default.html:36
 msgid "Menu"
-msgstr "Меню"
+msgstr ""
+"Меню"
 
 #: news/templates/flatpages/default.html:38
 msgid "Search"
-msgstr "Поиск"
+msgstr ""
+"Поиск"
 
 #: news/templates/flatpages/default.html:39
 msgid "News"
-msgstr "Новости"
+msgstr ""
+"Новость"
 
 #: news/templates/flatpages/default.html:40
 msgid "Article"
-msgstr "Статьи"
+msgstr ""
+"Статья"
 
 #: news/templates/flatpages/default.html:41
 msgid "Subscriptions"
-msgstr "Подписки"
+msgstr ""
+"Подписки"
 
 #: news/templates/flatpages/default.html:42
 msgid "Add news"
-msgstr "Добавить новость"
+msgstr ""
+"Добавить новость"
 
 #: news/templates/flatpages/default.html:43
 msgid "Add an article"
-msgstr "Добавить статью"
+msgstr ""
+"Добавить статью"
 
 #: news/templates/flatpages/default.html:45
 msgid "Exit"
-msgstr "Выход"
+msgstr ""
+"Выход"

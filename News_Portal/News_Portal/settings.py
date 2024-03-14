@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition (Определение приложения)
 
 INSTALLED_APPS = [
+    'modeltranslation',  # обязательно впишите его перед админом для перевода
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -264,7 +265,7 @@ CACHES = {
     }
 }
 
-# Логирование
+# Логирование для ДЗ
 # LOGGING = {
 #     'version': 1,
 #     'disable_existing_loggers': False,
@@ -388,5 +389,118 @@ CACHES = {
 #         },
 #     },
 # }
-#
-# logger = logging.getLogger("django")
+
+# Логирование
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+
+    'formatters': {
+        'custom-format-D': {
+            'format': '%(asctime)s %(levelname)s %(message)s'
+        },
+        'custom-format-I': {
+            'format': '%(asctime)s %(levelname)s %(module)s %(message)s'
+        },
+        'custom-format-W': {
+            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s'
+        },
+        'custom-format-EC': {
+            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s %(exc_info)s'
+        },
+        'email_format': {
+            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s'
+        },
+    },
+    'filters': {
+        'If_Debug_False': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        },
+        "If_Debug_True": {
+            "()": "django.utils.log.RequireDebugTrue",
+        }
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'custom-format-D',
+            'level': 'INFO',  # Изменено на INFO
+            'filters': ['If_Debug_True']
+        },
+        "console_error": {
+            "class": "logging.StreamHandler",
+            "formatter": "custom-format-W",
+            "filters": ['If_Debug_True'],
+            "level": "ERROR",
+        },
+        "console_warning": {
+            "class": "logging.StreamHandler",
+            "formatter": "custom-format-EC",
+            "filters": ['If_Debug_True'],
+            "level": "WARNING",
+        },
+        'general_file': {
+            'class': 'logging.FileHandler',
+            'filename': 'logs/general.log',
+            'level': 'INFO',
+            'formatter': 'custom-format-I',
+            'filters': ['If_Debug_False']
+        },
+        'errors_file': {
+            'class': 'logging.FileHandler',
+            'filename': 'logs/errors.log',
+            'level': 'ERROR',
+            'formatter': 'custom-format-EC'
+        },
+        'security_file': {
+            'class': 'logging.FileHandler',
+            'filename': 'logs/security.log',
+            'level': 'INFO',
+            'formatter': 'custom-format-W'
+        },
+        'mail_admins': {
+            'class': 'django.utils.log.AdminEmailHandler',
+            'level': 'ERROR',
+            'formatter': 'email_format'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': [
+                'console',
+                'general_file',
+                'errors_file',
+                'mail_admins'
+            ],
+            'level': 'DEBUG',
+            'propagate': True,  # Установлено в True
+        },
+        'django.request': {
+            'handlers': ['errors_file', 'mail_admins'],
+            'level': 'ERROR',
+            'propagate': True  # Установлено в True
+        },
+        'django.server': {
+            'handlers': ['errors_file', 'mail_admins'],
+            'level': 'ERROR',
+            'propagate': True  # Установлено в True
+        },
+        'django.template': {
+            'handlers': ['errors_file'],
+            'level': 'ERROR',
+            'propagate': True,  # Установлено в True
+        },
+        'django.db.backends': {
+            'handlers': ['errors_file'],
+            'level': 'ERROR',
+            'propagate': True,  # Установлено в True
+        },
+        'django.security': {
+            'handlers': ['security_file', 'mail_admins'],
+            'level': 'INFO',
+            'propagate': True,  # Установлено в True
+        },
+    },
+}
+
+logger = logging.getLogger("django")

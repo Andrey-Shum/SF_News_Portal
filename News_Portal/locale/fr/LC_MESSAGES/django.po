@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-08 17:46+0300\n"
+"POT-Creation-Date: 2024-03-09 09:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,18 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
 #: news/templates/account/email/base_message.txt:1
 #, python-format
 msgid "Hello from %(site_name)s!"
-msgstr "Bonjour de %(site_name)s!"
+msgstr ""
 
 #: news/templates/account/email/base_message.txt:5
 #, python-format
 msgid ""
 "Thanks for using %(site_name)s!\n"
 "%(site_domain)s"
-msgstr "Merci d'utiliser %(site_name)s!\n"
+msgstr ""
+"Merci d'utiliser %(site_name)s!\n"
+"%(site_domain)s"
 
 #: news/templates/account/email/email_confirmation_message.txt:5
 #, python-format
@@ -40,58 +41,74 @@ msgid ""
 "\n"
 "Have a good day!\n"
 msgstr ""
-"Vous avez reçu ce message car un utilisateur%(user_display)s l'a "
-"indiquéemail lors de l'inscription sur le site%(site_domain)s.\n"
+"Vous avez reçu ce message car un utilisateur%(user_display)s l'a indiqué"
+"email lors de l'inscription sur le site%(site_domain)s.\n"
 "\n"
 "Pour confirmer votre inscription, suivez le lien %(activate_url)s\n"
 "\n"
 "Passez une bonne journée!\n"
 
 #: news/templates/flatpages/default.html:10
+msgid "Portal News"
+msgstr ""
+"Actualités du portail"
+
 #: news/templates/flatpages/default.html:22
 msgid "News Portal"
-msgstr "Portail d'actualités"
+msgstr ""
+"Portail d'actualités"
 
 #: news/templates/flatpages/default.html:31
 msgid "fo Admin"
-msgstr "pour l'administrateur"
+msgstr ""
+"pour l'administrateur"
 
 #: news/templates/flatpages/default.html:32
 msgid "Home"
-msgstr "Maison"
+msgstr ""
+"Maison"
 
 #: news/templates/flatpages/default.html:33
 msgid "Log in"
-msgstr "Se connecter"
+msgstr ""
+"Se connecter"
 
 #: news/templates/flatpages/default.html:36
 msgid "Menu"
-msgstr "Menu"
+msgstr ""
+"Menu"
 
 #: news/templates/flatpages/default.html:38
 msgid "Search"
-msgstr "Recherche"
+msgstr ""
+"Recherche"
 
 #: news/templates/flatpages/default.html:39
 msgid "News"
-msgstr "Nouvelles"
+msgstr ""
+"Nouvelles"
 
 #: news/templates/flatpages/default.html:40
 msgid "Article"
-msgstr "Article"
+msgstr ""
+"Article"
 
 #: news/templates/flatpages/default.html:41
 msgid "Subscriptions"
-msgstr "Abonnements"
+msgstr ""
+"Abonnements"
 
 #: news/templates/flatpages/default.html:42
 msgid "Add news"
-msgstr "Ajouter des nouvelles"
+msgstr ""
+"Ajouter des nouvelles"
 
 #: news/templates/flatpages/default.html:43
 msgid "Add an article"
-msgstr "Ajouter un article"
+msgstr ""
+"Ajouter un article"
 
 #: news/templates/flatpages/default.html:45
 msgid "Exit"
-msgstr "Sortie"
+msgstr ""
+"Sortie"

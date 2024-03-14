@@ -1,0 +1,13 @@
+2024-03-09 11:38:22,488 WARNING Forbidden (CSRF token from POST incorrect.): /i18n/setlang/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py
+2024-03-09 11:38:30,252 WARNING Forbidden (CSRF token from POST incorrect.): /i18n/setlang/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py
+2024-03-09 11:58:29,772 WARNING Forbidden (CSRF token from POST incorrect.): /i18n/setlang/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py
+2024-03-09 11:59:33,252 WARNING Forbidden (CSRF token from POST incorrect.): /i18n/setlang/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py
+2024-03-09 11:59:39,774 WARNING Forbidden (CSRF token from POST incorrect.): /i18n/setlang/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py
+2024-03-09 11:59:43,761 WARNING Forbidden (CSRF token from POST incorrect.): /i18n/setlang/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py
+2024-03-09 11:59:47,896 WARNING Forbidden (CSRF token from POST incorrect.): /i18n/setlang/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py
+2024-03-09 11:59:55,947 WARNING Forbidden (CSRF token from POST incorrect.): /i18n/setlang/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py
+2024-03-09 12:02:50,412 WARNING Forbidden (CSRF token from POST incorrect.): /i18n/setlang/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py
+2024-03-09 12:03:04,654 WARNING Forbidden (CSRF token from POST incorrect.): /i18n/setlang/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py
+2024-03-09 12:03:17,280 WARNING Forbidden (CSRF token from POST incorrect.): /i18n/setlang/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py
+2024-03-09 12:03:28,648 WARNING Forbidden (CSRF token from POST incorrect.): /i18n/setlang/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py
+2024-03-09 12:09:38,660 WARNING Forbidden (CSRF token from POST incorrect.): /i18n/setlang/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py
