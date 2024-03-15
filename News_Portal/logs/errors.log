@@ -1498,3 +1498,177 @@ Traceback (most recent call last):
 AttributeError: 'ArticleForm' object has no attribute 'save_m2m'
 2024-03-14 11:38:09,784 ERROR "POST /articles/create/ HTTP/1.1" 500 109263 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
 2024-03-14 11:38:09,784 ERROR "POST /articles/create/ HTTP/1.1" 500 109263 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-15 00:44:25,755 ERROR Internal Server Error: /articles/create/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'AttributeError'>, AttributeError("'ArticleForm' object has no attribute 'save_m2m'"), <traceback object at 0x7f4cd02ee400>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 135, in form_valid
+    form.save_m2m()  # Сохранение данных «многие ко многим»
+AttributeError: 'ArticleForm' object has no attribute 'save_m2m'
+2024-03-15 00:44:25,755 ERROR Internal Server Error: /articles/create/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'AttributeError'>, AttributeError("'ArticleForm' object has no attribute 'save_m2m'"), <traceback object at 0x7f4cd02ee400>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 135, in form_valid
+    form.save_m2m()  # Сохранение данных «многие ко многим»
+AttributeError: 'ArticleForm' object has no attribute 'save_m2m'
+2024-03-15 00:44:26,279 ERROR "POST /articles/create/ HTTP/1.1" 500 120478 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-15 00:44:26,279 ERROR "POST /articles/create/ HTTP/1.1" 500 120478 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-15 02:03:54,219 ERROR Internal Server Error: /admin/news/comment/3/change/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_comment.dateCreation'), <traceback object at 0x7f2b07e74cc0>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: news_comment.dateCreation
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1798, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1227, in save_model
+    obj.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 990, in _save_table
+    updated = self._do_update(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1984, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_comment.dateCreation
+2024-03-15 02:03:54,219 ERROR Internal Server Error: /admin/news/comment/3/change/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_comment.dateCreation'), <traceback object at 0x7f2b07e74cc0>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: news_comment.dateCreation
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1798, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1227, in save_model
+    obj.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 990, in _save_table
+    updated = self._do_update(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1984, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_comment.dateCreation
+2024-03-15 02:03:54,399 ERROR "POST /admin/news/comment/3/change/ HTTP/1.1" 500 200230 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-15 02:03:54,399 ERROR "POST /admin/news/comment/3/change/ HTTP/1.1" 500 200230 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None

@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from .models import Author, Category, Post, Comment
 from django.db.models import F
-from modeltranslation.admin import TranslationAdmin  # импортируем модель амдинки
+from modeltranslation.admin import TranslationAdmin  # импортируем модель амдинки   # noqa
 # (вспоминаем переопределение стандартных админ-инструментов)
 
 

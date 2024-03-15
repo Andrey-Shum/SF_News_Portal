@@ -259,7 +259,7 @@ CELERY_TIMEZONE = 'Europe/Moscow'
 
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache', # noqa
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
         'LOCATION': os.path.join(BASE_DIR, 'cache_files'),
         # Не забываем создать папку cache_files внутри папки с manage.py!
     }

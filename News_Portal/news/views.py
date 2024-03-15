@@ -130,8 +130,9 @@ class ArticleCreate(PermissionRequiredMixin, LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.type = 'AR'
         form.instance.author = self.request.user.author
-        form.instance.save()
+        self.object = form.save()
         # Сохранить публикацию, чтобы у нее был идентификатор.
+        form.save(commit=False)
         form.save_m2m()  # Сохранение данных «многие ко многим»
         return super().form_valid(form)
 
