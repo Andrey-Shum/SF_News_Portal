@@ -1672,3 +1672,665 @@ Traceback (most recent call last):
 django.db.utils.IntegrityError: NOT NULL constraint failed: news_comment.dateCreation
 2024-03-15 02:03:54,399 ERROR "POST /admin/news/comment/3/change/ HTTP/1.1" 500 200230 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
 2024-03-15 02:03:54,399 ERROR "POST /admin/news/comment/3/change/ HTTP/1.1" 500 200230 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 07:09:09,457 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news_list' not found. 'news_list' is not a valid view function or pattern name."), <traceback object at 0x7f38be279c80>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 66, in post
+    return redirect('news_list')
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news_list' not found. 'news_list' is not a valid view function or pattern name.
+2024-03-19 07:09:09,457 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news_list' not found. 'news_list' is not a valid view function or pattern name."), <traceback object at 0x7f38be279c80>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 66, in post
+    return redirect('news_list')
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news_list' not found. 'news_list' is not a valid view function or pattern name.
+2024-03-19 07:09:09,613 ERROR "POST /news/ HTTP/1.1" 500 101811 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 07:09:09,613 ERROR "POST /news/ HTTP/1.1" 500 101811 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 07:16:44,917 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news' not found. 'news' is not a valid view function or pattern name."), <traceback object at 0x7f14163b6b80>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 66, in post
+    return redirect('news')
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news' not found. 'news' is not a valid view function or pattern name.
+2024-03-19 07:16:44,917 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news' not found. 'news' is not a valid view function or pattern name."), <traceback object at 0x7f14163b6b80>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 66, in post
+    return redirect('news')
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news' not found. 'news' is not a valid view function or pattern name.
+2024-03-19 07:16:45,026 ERROR "POST /news/ HTTP/1.1" 500 101870 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 07:16:45,026 ERROR "POST /news/ HTTP/1.1" 500 101870 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 07:26:10,534 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news' not found. 'news' is not a valid view function or pattern name."), <traceback object at 0x7fb36af59380>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 66, in post
+    return redirect('news')
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news' not found. 'news' is not a valid view function or pattern name.
+2024-03-19 07:26:10,534 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news' not found. 'news' is not a valid view function or pattern name."), <traceback object at 0x7fb36af59380>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 66, in post
+    return redirect('news')
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news' not found. 'news' is not a valid view function or pattern name.
+2024-03-19 07:26:10,618 ERROR "POST /news/ HTTP/1.1" 500 101874 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 07:26:10,618 ERROR "POST /news/ HTTP/1.1" 500 101874 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 07:27:30,177 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news_list' not found. 'news_list' is not a valid view function or pattern name."), <traceback object at 0x7f3208372d00>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 66, in post
+    return redirect('news_list')
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news_list' not found. 'news_list' is not a valid view function or pattern name.
+2024-03-19 07:27:30,177 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news_list' not found. 'news_list' is not a valid view function or pattern name."), <traceback object at 0x7f3208372d00>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 66, in post
+    return redirect('news_list')
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news_list' not found. 'news_list' is not a valid view function or pattern name.
+2024-03-19 07:27:30,287 ERROR "POST /news/ HTTP/1.1" 500 101964 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 07:27:30,287 ERROR "POST /news/ HTTP/1.1" 500 101964 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 07:33:42,719 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x7f8c77b75f00>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 208, in render
+    return template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 177, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+2024-03-19 07:33:42,719 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x7f8c77b75f00>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 208, in render
+    return template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 177, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+2024-03-19 07:33:43,178 ERROR "GET /news/ HTTP/1.1" 500 293165 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 07:33:43,178 ERROR "GET /news/ HTTP/1.1" 500 293165 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 07:33:58,082 ERROR Internal Server Error: / /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x7f8c769a9400>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 31, in Start_Padge
+    return render(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 208, in render
+    return template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 177, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+2024-03-19 07:33:58,082 ERROR Internal Server Error: / /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name."), <traceback object at 0x7f8c769a9400>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 31, in Start_Padge
+    return render(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 208, in render
+    return template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 177, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_timezone' not found. 'set_timezone' is not a valid view function or pattern name.
+2024-03-19 07:33:58,285 ERROR "GET / HTTP/1.1" 500 300381 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 07:33:58,285 ERROR "GET / HTTP/1.1" 500 300381 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 08:15:07,602 ERROR Internal Server Error: /article/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 55: 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7f1bb23d4040>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endcache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 127, in article_list
+    return render(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 55: 'endcache'. Did you forget to register or load this tag?
+2024-03-19 08:15:07,602 ERROR Internal Server Error: /article/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 55: 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7f1bb23d4040>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endcache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 127, in article_list
+    return render(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 55: 'endcache'. Did you forget to register or load this tag?
+2024-03-19 08:15:07,745 ERROR "POST /article/ HTTP/1.1" 500 257174 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 08:15:07,745 ERROR "POST /article/ HTTP/1.1" 500 257174 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 09:04:43,986 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'TypeError'>, TypeError("join() argument must be str, bytes, or os.PathLike object, not 'dict'"), <traceback object at 0x7f1fc4b9b6c0>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 63, in get_context_data
+    return HttpResponse(render('news/news_list.html', context))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/base.py", line 17, in get_template
+    for origin in self.get_template_sources(template_name):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/cached.py", line 70, in get_template_sources
+    yield from loader.get_template_sources(template_name)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/filesystem.py", line 35, in get_template_sources
+    name = safe_join(template_dir, template_name)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "/usr/lib/python3.10/posixpath.py", line 90, in join
+    genericpath._check_arg_types('join', a, *p)
+  File "/usr/lib/python3.10/genericpath.py", line 152, in _check_arg_types
+    raise TypeError(f'{funcname}() argument must be str, bytes, or '
+TypeError: join() argument must be str, bytes, or os.PathLike object, not 'dict'
+2024-03-19 09:04:43,986 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'TypeError'>, TypeError("join() argument must be str, bytes, or os.PathLike object, not 'dict'"), <traceback object at 0x7f1fc4b9b6c0>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 63, in get_context_data
+    return HttpResponse(render('news/news_list.html', context))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/base.py", line 17, in get_template
+    for origin in self.get_template_sources(template_name):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/cached.py", line 70, in get_template_sources
+    yield from loader.get_template_sources(template_name)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loaders/filesystem.py", line 35, in get_template_sources
+    name = safe_join(template_dir, template_name)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "/usr/lib/python3.10/posixpath.py", line 90, in join
+    genericpath._check_arg_types('join', a, *p)
+  File "/usr/lib/python3.10/genericpath.py", line 152, in _check_arg_types
+    raise TypeError(f'{funcname}() argument must be str, bytes, or '
+TypeError: join() argument must be str, bytes, or os.PathLike object, not 'dict'
+2024-03-19 09:04:44,520 ERROR "GET /news/ HTTP/1.1" 500 243603 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 09:04:44,520 ERROR "GET /news/ HTTP/1.1" 500 243603 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 10:18:24,334 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('index.html'), <traceback object at 0x7f63255f7500>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 71, in get
+    return HttpResponse(render(request, 'index.html', context))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+2024-03-19 10:18:24,334 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('index.html'), <traceback object at 0x7f63255f7500>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 71, in get
+    return HttpResponse(render(request, 'index.html', context))
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+2024-03-19 10:18:24,563 ERROR "GET /news/ HTTP/1.1" 500 118974 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 10:18:24,563 ERROR "GET /news/ HTTP/1.1" 500 118974 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 10:42:01,771 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError("The view news.views.view didn't return an HttpResponse object. It returned None instead."), <traceback object at 0x7efc156b7580>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view news.views.view didn't return an HttpResponse object. It returned None instead.
+2024-03-19 10:42:01,771 ERROR Internal Server Error: /news/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError("The view news.views.view didn't return an HttpResponse object. It returned None instead."), <traceback object at 0x7efc156b7580>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view news.views.view didn't return an HttpResponse object. It returned None instead.
+2024-03-19 10:42:01,885 ERROR "GET /news/ HTTP/1.1" 500 74444 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 10:42:01,885 ERROR "GET /news/ HTTP/1.1" 500 74444 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 10:55:13,235 ERROR Internal Server Error: / /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'NameError'>, NameError("name 'timezone_str' is not defined"), <traceback object at 0x7f9c2f6aec40>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 40, in Start_Padge
+    current_timezone = pytz.timezone(timezone_str)
+NameError: name 'timezone_str' is not defined
+2024-03-19 10:55:13,235 ERROR Internal Server Error: / /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'NameError'>, NameError("name 'timezone_str' is not defined"), <traceback object at 0x7f9c2f6aec40>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/views.py", line 40, in Start_Padge
+    current_timezone = pytz.timezone(timezone_str)
+NameError: name 'timezone_str' is not defined
+2024-03-19 10:55:13,300 ERROR "GET / HTTP/1.1" 500 73875 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-03-19 10:55:13,300 ERROR "GET / HTTP/1.1" 500 73875 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None

@@ -68,6 +68,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'basic.middlewares.TimezoneMiddleware',  # для обработки часовых поясов.
+
     # AccountMiddleware действует как связующее звено между
     # процессом обработки запросов Django, системой сессий, аутентификацией и
     # перенаправлениями, это ключевой элемент для работы 'django-allauth'.
@@ -138,7 +141,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'Europe/Moscow'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 

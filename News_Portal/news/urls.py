@@ -12,7 +12,8 @@ urlpatterns = [
     # URL-шаблон Поисковой страницы
     path('news/', NewsList.as_view(), name='news_list'),
     # URL-шаблон для списка новостей
-    path('news/<int:pk>/', cache_page(60*5)(NewsDetail.as_view()), name='news_detail'),
+    path('news/<int:pk>/', NewsDetail.as_view(), name='news_detail'),  # без кеша
+    # path('news/<int:pk>/', cache_page(60*5)(NewsDetail.as_view()), name='news_detail'),
     # URL-шаблон списка новостей
     path('article/', views.article_list, name='article_list'),
     # URL-шаблон для списка статей

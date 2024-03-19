@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-{% load i18n %}
+{% load i18n %} <!-- тег для работы с интернационализацией -->
+{% load tz %} <!-- не забываем загрузить тег для работы с часовыми поясами -->
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -12,10 +14,12 @@
         {% load static %}
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
         {% include 'flatpages/localeBar.html' %} <!-- Здесь переключатель языка -->
+        {% include 'flatpages/timeBar.html' %} <!-- Здесь переключатель Часового пояса -->
     </head>
     <body>
-        {% load cache %}
-        {% cache 600 navbar request.path %}
+    <!-- Кеширование-->
+{#        {% load cache %}#}
+{#        {% cache 600 navbar request.path %}#}
 
         <!-- Адаптивная навигация-->
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -50,7 +54,7 @@
                 </div>
             </div>
         </nav>
-        {% endcache %}
+{#        {% endcache %}#}
         <!-- Адаптивная навигация вариант №1
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">

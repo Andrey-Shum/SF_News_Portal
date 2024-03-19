@@ -1,6 +1,9 @@
 from django.core.paginator import Paginator
 from django.http import Http404
-from django.shortcuts import render, get_object_or_404
+from django.http.response import \
+    HttpResponse  # импортируем респонс для проверки текста
+from django.utils import timezone
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.mixins import PermissionRequiredMixin, \
     LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, \
@@ -9,6 +12,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, \
 from .filters import PostFilter
 from .forms import NewsForm, ArticleForm
 from .models import Post, Category
+
+import pytz  # импортируем стандартный модуль для работы с часовыми поясами
 
 from django.views.decorators.cache import cache_page
 
@@ -22,13 +27,28 @@ get_object_or_404 - используется для получения объе�
 
 
 # ====== Стартовая страница ====================================================
-@cache_page(60)  # кэширование на 1 минут (60 сек)
+# @cache_page(60)  # кэширование на 1 минут (60 сек)
+'''
+В аргументы к декоратору передаём количество секунд, которые хотим,
+чтобы страница держалась в кэше. Внимание! Пока страница находится в кэше,
+изменения, происходящие на ней, учитываться не будут!
+'''
+
+
 def Start_Padge(request):
+    timezone_str = request.session.get('django_timezone', 'UTC')
     news = Post.objects.filter(type='NW').order_by('-creationDate')[:4]
+    current_timezone = pytz.timezone(timezone_str)
+    current_time = timezone.localtime(timezone.now(), timezone=current_timezone)
     return render(
         request,
         'flatpages/Start.html',
-        {'news': news}
+        {
+            'news': news,
+            'current_time': current_time,
+            'timezones': pytz.common_timezones,
+            'selected_timezone': timezone_str
+        },
     )
 
 
@@ -42,6 +62,24 @@ class NewsList(ListView):
     def get_queryset(self):
         queryset = super().get_queryset().filter(type='NW')
         return queryset.order_by('-creationDate')
+
+    def get(self, request):
+        models = Post.objects.filter(type='NW')
+
+        context = {
+            'news': models,
+            'current_time': timezone.localtime(timezone.now()),
+            'timezones': pytz.common_timezones
+            # добавляем в контекст все доступные часовые пояса
+        }
+
+        return HttpResponse(render(request, 'news_list.html', context))
+
+    #  по пост-запросу будем добавлять в сессию часовой пояс,
+    #  который и будет обрабатываться написанным нами ранее middleware
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return redirect('/news')
 
 
 class NewsDetail(DetailView):
@@ -105,7 +143,12 @@ def article_list(request):
     return render(
         request,
         'news/article_list.html',
-        {'articles': articles}
+        {
+            'articles': articles,
+            'current_time': timezone.localtime(timezone.now()),
+            'timezones': pytz.common_timezones
+            # добавляем в контекст все доступные часовые пояса
+        }
     )
 
 
@@ -180,4 +223,9 @@ class Search(ListView):
         context['filter'] = self.filterset
         context[
             'categories'] = Category.objects.all()  # Получение всех категорий
+        context = {
+            'current_time': timezone.localtime(timezone.now()),
+            'timezones': pytz.common_timezones
+            # добавляем в контекст все доступные часовые пояса
+        }
         return context
