@@ -1,4 +1,4 @@
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import Http404
 from django.http.response import \
     HttpResponse  # импортируем респонс для проверки текста
@@ -33,23 +33,23 @@ get_object_or_404 - используется для получения объе�
 чтобы страница держалась в кэше. Внимание! Пока страница находится в кэше,
 изменения, происходящие на ней, учитываться не будут!
 '''
+# def Start_Padge(request):
+#     news = Post.objects.filter(type='NW').order_by('-creationDate')[:4]
+#     return render(request, 'flatpages/Start.html', {'news': news})
 
 
 def Start_Padge(request):
-    timezone_str = request.session.get('django_timezone', 'UTC')
-    news = Post.objects.filter(type='NW').order_by('-creationDate')[:4]
-    current_timezone = pytz.timezone(timezone_str)
-    current_time = timezone.localtime(timezone.now(), timezone=current_timezone)
-    return render(
-        request,
-        'flatpages/Start.html',
-        {
-            'news': news,
-            'current_time': current_time,
-            'timezones': pytz.common_timezones,
-            'selected_timezone': timezone_str
-        },
-    )
+    current_time = timezone.localtime(timezone.now())
+    context = {
+        'news': Post.objects.filter(type='NW').order_by('-creationDate')[:4],
+        'timezones': pytz.common_timezones,
+        'current_time': current_time
+    }
+    if request.method == 'POST':
+        request.session['django_timezone'] = request.POST['timezone']
+        return redirect('news:Start')
+
+    return render(request, 'flatpages/Start.html', context)
 
 
 # ====== Новости ===============================================================
@@ -133,23 +133,47 @@ class NewsDelete(PermissionRequiredMixin, LoginRequiredMixin, DeleteView):
 
 
 # ====== Статьи ================================================================
+# def article_list(request):
+#     article = Post.objects.filter(type='AR').order_by(
+#         '-creationDate')  # Фильтруем только статьи
+#     # и сортируем по убыванию даты
+#     paginator = Paginator(article, 2)
+#     page = request.GET.get('page')
+#     articles = paginator.get_page(page)
+#     return render(request,
+#                   'news/article_list.html',
+#                   {'articles': articles})
+
+
 def article_list(request):
-    article = Post.objects.filter(type='AR').order_by(
-        '-creationDate')  # Фильтруем только статьи
-    # и сортируем по убыванию даты
-    paginator = Paginator(article, 2)
+    # Получите текущее время в активированном часовом поясе
+    # current_time = timezone.now() # так не  будет работать смена фона
+    # при изменении часового пояса потому что что timezone.now().hour
+    # всегда возвращает час по UTC
+    current_time = timezone.localtime(timezone.now())
+    articles = Post.objects.filter(type='AR').order_by('-creationDate')
+    paginator = Paginator(articles, 2)
     page = request.GET.get('page')
-    articles = paginator.get_page(page)
-    return render(
-        request,
-        'news/article_list.html',
-        {
-            'articles': articles,
-            'current_time': timezone.localtime(timezone.now()),
-            'timezones': pytz.common_timezones
-            # добавляем в контекст все доступные часовые пояса
-        }
-    )
+    try:
+        articles = paginator.page(page)
+    except PageNotAnInteger:
+        # Если страница не является целым числом, доставьте первую страницу.
+        articles = paginator.page(1)
+    except EmptyPage:
+        # Если страница выходит за пределы диапазона
+        # показать последнюю страницу результатов.
+        articles = paginator.page(paginator.num_pages)
+
+    context = {
+        'articles': articles,
+        'paginator': paginator,
+        'timezones': pytz.common_timezones,
+        'current_time': current_time
+    }
+    if request.method == 'POST':
+        request.session['django_timezone'] = request.POST['timezone']
+        return redirect('news:article_list')
+    return render(request, 'news/article_list.html', context)
 
 
 # def article_detail(request, post_id):
