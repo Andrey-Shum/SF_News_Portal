@@ -18,10 +18,17 @@
 from django.contrib import admin
 from django.urls import path, include
 
+from news.views import NewsListAPIviws, ArticleListAPIviws, \
+    ArticleDetailAPIviws, NewsDetailAPIviws
+
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     # подключаем встроенные эндопинты для работы с локализацией
     path('admin/', admin.site.urls),
+    path('api/v1/news', NewsListAPIviws.as_view()),
+    path('api/v1/news/<int:pk>/delete/', NewsDetailAPIviws.as_view()),
+    path('api/v1/article', ArticleListAPIviws.as_view()),
+    path('api/v1/article/<int:pk>/delete/', ArticleDetailAPIviws.as_view()),
     path('', include('news.urls')),
     path('accounts/', include('allauth.urls')),  # Запросы от пользователей по
     # ссылкам, которые начинаются с /accounts/

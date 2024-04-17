@@ -1,3 +1,4 @@
+from rest_framework import generics, pagination, permissions
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import Http404
 from django.http.response import \
@@ -8,6 +9,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin, \
     LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, \
     DeleteView
+from rest_framework.pagination import PageNumberPagination
 
 from .filters import PostFilter
 from .forms import NewsForm, ArticleForm
@@ -16,6 +18,10 @@ from .models import Post, Category
 import pytz  # импортируем стандартный модуль для работы с часовыми поясами
 
 from django.views.decorators.cache import cache_page
+
+from .serializers import PostSerializer
+
+
 
 """
 get_object_or_404 - используется для получения объекта из базы данных по
@@ -253,3 +259,51 @@ class Search(ListView):
             # добавляем в контекст все доступные часовые пояса
         }
         return context
+
+
+# ==== DRF =====================================================================
+# class NewsListAPIviws (generics.ListAPIView):
+#     queryset = Post.objects.filter(type=Post.NEWS)  # Получаем только новости
+#     serializer_class = PostSerializer
+#     pagination_class = pagination.LimitOffsetPagination
+#     pagination_class.default_limit = 10
+
+
+# class articleAPIViws (generics.ListAPIView):
+#     queryset = queryset = Post.objects.filter(type=Post.ARTICLE)
+#     # Получаем только статьи
+#     serializer_class = PostSerializer
+#     pagination_class = pagination.LimitOffsetPagination
+#     pagination_class.default_limit = 10
+
+class LargeResultsSetPagination(PageNumberPagination):
+    page_size = 9
+    page_size_query_param = 'page_size'
+    max_page_size = 10000
+
+
+class NewsListAPIviws (generics.ListCreateAPIView):
+    queryset = Post.objects.filter(type=Post.NEWS).order_by('id')
+    serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    pagination_class = LargeResultsSetPagination
+
+
+class NewsDetailAPIviws (generics.RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.filter(type=Post.NEWS)
+    serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class ArticleListAPIviws (generics.ListCreateAPIView):
+    queryset = Post.objects.filter(type=Post.ARTICLE)
+    serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    pagination_class = LargeResultsSetPagination
+
+
+class ArticleDetailAPIviws (generics.RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.filter(type=Post.ARTICLE).order_by('id')
+    # .order_by('id') упорядочить свой набор запросов по id
+    serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticated]

@@ -2518,3 +2518,1086 @@ Traceback (most recent call last):
 NameError: name 'PageNotAnInteger' is not defined
 2024-03-20 07:00:16,264 ERROR "GET /article/ HTTP/1.1" 500 93049 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
 2024-03-20 07:00:16,264 ERROR "GET /article/ HTTP/1.1" 500 93049 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-05 12:08:24,602 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Field name `cat_id` is not valid for model `Post` in `news.serializers.PostSerializer`.'), <traceback object at 0x7f43d1e03600>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 203, in get
+    return self.list(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 713, in to_representation
+    return [
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `cat_id` is not valid for model `Post` in `news.serializers.PostSerializer`.
+2024-04-05 12:08:24,602 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Field name `cat_id` is not valid for model `Post` in `news.serializers.PostSerializer`.'), <traceback object at 0x7f43d1e03600>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 203, in get
+    return self.list(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 713, in to_representation
+    return [
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `cat_id` is not valid for model `Post` in `news.serializers.PostSerializer`.
+2024-04-05 12:08:24,810 ERROR "GET /api/v1/news HTTP/1.1" 500 166611 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-05 12:08:24,810 ERROR "GET /api/v1/news HTTP/1.1" 500 166611 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 06:50:51,524 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_id'), <traceback object at 0x7f59faf3e1c0>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/manager.py", line 411, in create
+    return super().create(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/models.py", line 91, in save
+    super().save(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_id
+2024-04-17 06:50:51,524 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_id'), <traceback object at 0x7f59faf3e1c0>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/manager.py", line 411, in create
+    return super().create(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/models.py", line 91, in save
+    super().save(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_id
+2024-04-17 06:50:51,798 ERROR "POST /api/v1/news HTTP/1.1" 500 236320 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 06:50:51,798 ERROR "POST /api/v1/news HTTP/1.1" 500 236320 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 06:53:33,232 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_id'), <traceback object at 0x7f199d8b6a40>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/manager.py", line 411, in create
+    return super().create(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/models.py", line 91, in save
+    super().save(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_id
+2024-04-17 06:53:33,232 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_id'), <traceback object at 0x7f199d8b6a40>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/manager.py", line 411, in create
+    return super().create(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/models.py", line 91, in save
+    super().save(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_id
+2024-04-17 06:53:33,398 ERROR "POST /api/v1/news HTTP/1.1" 500 236540 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 06:53:33,398 ERROR "POST /api/v1/news HTTP/1.1" 500 236540 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 08:29:39,500 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_id'), <traceback object at 0x7f559bd528c0>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/manager.py", line 411, in create
+    return super().create(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/models.py", line 91, in save
+    super().save(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_id
+2024-04-17 08:29:39,500 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_id'), <traceback object at 0x7f559bd528c0>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/manager.py", line 411, in create
+    return super().create(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/models.py", line 91, in save
+    super().save(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_id
+2024-04-17 08:29:39,846 ERROR "POST /api/v1/news HTTP/1.1" 500 238006 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 08:29:39,846 ERROR "POST /api/v1/news HTTP/1.1" 500 238006 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+===============================================================================
+2024-04-17 08:36:02,772 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_id'), <traceback object at 0x7f559ab208c0>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/manager.py", line 411, in create
+    return super().create(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/models.py", line 91, in save
+    super().save(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_id
+2024-04-17 08:36:02,772 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_id'), <traceback object at 0x7f559ab208c0>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/manager.py", line 411, in create
+    return super().create(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/models.py", line 91, in save
+    super().save(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_id
+2024-04-17 08:36:02,978 ERROR "POST /api/v1/news HTTP/1.1" 500 238006 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 08:36:02,978 ERROR "POST /api/v1/news HTTP/1.1" 500 238006 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 08:40:02,362 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Field name `PostCategory` is not valid for model `Post` in `news.serializers.PostSerializer`.'), <traceback object at 0x7f3871cc2440>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 243, in get
+    return self.list(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 713, in to_representation
+    return [
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `PostCategory` is not valid for model `Post` in `news.serializers.PostSerializer`.
+2024-04-17 08:40:02,362 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Field name `PostCategory` is not valid for model `Post` in `news.serializers.PostSerializer`.'), <traceback object at 0x7f3871cc2440>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 243, in get
+    return self.list(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 713, in to_representation
+    return [
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `PostCategory` is not valid for model `Post` in `news.serializers.PostSerializer`.
+2024-04-17 08:40:02,551 ERROR "GET /api/v1/news HTTP/1.1" 500 169994 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 08:40:02,551 ERROR "GET /api/v1/news HTTP/1.1" 500 169994 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 08:59:07,825 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_id'), <traceback object at 0x7f437df036c0>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/manager.py", line 411, in create
+    return super().create(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/models.py", line 91, in save
+    super().save(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_id
+2024-04-17 08:59:07,825 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_id'), <traceback object at 0x7f437df036c0>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/manager.py", line 411, in create
+    return super().create(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/shum/git/SF_News_Portal/News_Portal/news/models.py", line 91, in save
+    super().save(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_id
+2024-04-17 08:59:08,003 ERROR "POST /api/v1/news HTTP/1.1" 500 238018 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 08:59:08,003 ERROR "POST /api/v1/news HTTP/1.1" 500 238018 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 09:20:07,361 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('Cannot assign "<SimpleLazyObject: <User: andrey>>": "Post.author" must be a "Author" instance.'), <traceback object at 0x7f95854dc700>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/manager.py", line 411, in create
+    return super().create(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 656, in create
+    obj = self.model(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/translator.py", line 278, in new_init
+    old_init(self, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/fields/related_descriptors.py", line 266, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<SimpleLazyObject: <User: andrey>>": "Post.author" must be a "Author" instance.
+2024-04-17 09:20:07,361 ERROR Internal Server Error: /api/v1/news /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('Cannot assign "<SimpleLazyObject: <User: andrey>>": "Post.author" must be a "Author" instance.'), <traceback object at 0x7f95854dc700>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/manager.py", line 411, in create
+    return super().create(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/query.py", line 656, in create
+    obj = self.model(**kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/modeltranslation/translator.py", line 278, in new_init
+    old_init(self, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/db/models/fields/related_descriptors.py", line 266, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<SimpleLazyObject: <User: andrey>>": "Post.author" must be a "Author" instance.
+2024-04-17 09:20:07,539 ERROR "POST /api/v1/news?format=api HTTP/1.1" 500 161526 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 09:20:07,539 ERROR "POST /api/v1/news?format=api HTTP/1.1" 500 161526 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 10:53:25,659 ERROR Internal Server Error: /articles/31/delete/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('ArticleDelete is missing the permission_required attribute. Define ArticleDelete.permission_required, or override ArticleDelete.get_permission_required().'), <traceback object at 0x7f3204669b80>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 107, in dispatch
+    if not self.has_permission():
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 103, in has_permission
+    perms = self.get_permission_required()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 87, in get_permission_required
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: ArticleDelete is missing the permission_required attribute. Define ArticleDelete.permission_required, or override ArticleDelete.get_permission_required().
+2024-04-17 10:53:25,659 ERROR Internal Server Error: /articles/31/delete/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('ArticleDelete is missing the permission_required attribute. Define ArticleDelete.permission_required, or override ArticleDelete.get_permission_required().'), <traceback object at 0x7f3204669b80>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 107, in dispatch
+    if not self.has_permission():
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 103, in has_permission
+    perms = self.get_permission_required()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 87, in get_permission_required
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: ArticleDelete is missing the permission_required attribute. Define ArticleDelete.permission_required, or override ArticleDelete.get_permission_required().
+2024-04-17 10:53:25,957 ERROR "GET /articles/31/delete/ HTTP/1.1" 500 87615 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 10:53:25,957 ERROR "GET /articles/31/delete/ HTTP/1.1" 500 87615 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 10:53:40,242 ERROR Internal Server Error: /articles/31/edit/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('ArticleEdit is missing the permission_required attribute. Define ArticleEdit.permission_required, or override ArticleEdit.get_permission_required().'), <traceback object at 0x7f3204683800>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 107, in dispatch
+    if not self.has_permission():
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 103, in has_permission
+    perms = self.get_permission_required()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 87, in get_permission_required
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: ArticleEdit is missing the permission_required attribute. Define ArticleEdit.permission_required, or override ArticleEdit.get_permission_required().
+2024-04-17 10:53:40,242 ERROR Internal Server Error: /articles/31/edit/ /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/utils/log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('ArticleEdit is missing the permission_required attribute. Define ArticleEdit.permission_required, or override ArticleEdit.get_permission_required().'), <traceback object at 0x7f3204683800>)
+Traceback (most recent call last):
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 107, in dispatch
+    if not self.has_permission():
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 103, in has_permission
+    perms = self.get_permission_required()
+  File "/home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 87, in get_permission_required
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: ArticleEdit is missing the permission_required attribute. Define ArticleEdit.permission_required, or override ArticleEdit.get_permission_required().
+2024-04-17 10:53:40,354 ERROR "GET /articles/31/edit/ HTTP/1.1" 500 87557 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2024-04-17 10:53:40,354 ERROR "GET /articles/31/edit/ HTTP/1.1" 500 87557 /home/shum/git/SF_News_Portal/z-virt/lib/python3.10/site-packages/django/core/servers/basehttp.py None
